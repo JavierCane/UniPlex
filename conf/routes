@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                          controllers.Application.index()
+GET         /simple-result             controllers.Application.simpleResult()
+
+# Error test
+GET         /bad-request-result        controllers.Application.badRequestResult()
+
+# Offer details page
+GET         /job/:urlize/:id           controllers.Application.viewJobDetails(urlize: String, id: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+POST        /assets/*file              controllers.Assets.at(path="/public", file)
