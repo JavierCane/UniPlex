@@ -1,21 +1,12 @@
+package models;
 
-
-/**
- * @author JavierCane
- * @version 1.0
- * @created 15-may-2014 8:52:30
- */
 public class Poblacio {
 
-	private String nom;
-	public CodiPostal m_CodiPostal;
-	public Oferta m_Oferta;
+    private String nom;
+    public CodiPostal codiPostal;
+    public Oferta oferta;
 
-	public Poblacio(){
+    public Poblacio() {
 
-	}
-
-	public void finalize() throws Throwable {
-
-	}
-}//end Poblacio
+    }
+}

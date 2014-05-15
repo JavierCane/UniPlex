@@ -1,20 +1,13 @@
+package models;
 
+import models.types.EstatCandidatura;
 
-/**
- * @author JavierCane
- * @version 1.0
- * @created 15-may-2014 8:52:29
- */
 public class Candidatura {
 
-	private String comentari;
-	private EstatCandidatura estat;
+    private String comentari;
+    private EstatCandidatura estatCandidatura;
 
-	public Candidatura(){
+    public Candidatura() {
 
-	}
-
-	public void finalize() throws Throwable {
-
-	}
-}//end Candidatura
+    }
+}
