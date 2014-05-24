@@ -1,16 +1,24 @@
 package models;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
+//@Entity
+//@DiscriminatorValue("Estudiant")
 final public class Estudiant extends Usuari {
 
-    private String email;
+//    @NotNull
+//    @Column(unique = true)
+    private String dni;
+
     private String altresDades;
     private String cognom1;
     private String cognom2;
     private Date dataActualitzacio;
-    private String dni;
     private String fotografia;
     private String nom;
     private Integer nss;
