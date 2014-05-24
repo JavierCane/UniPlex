@@ -1,14 +1,15 @@
 package models;
 
+import play.db.ebean.Model;
+
 import java.util.Date;
 
-public class ExperienciaLaboral {
+final public class ExperienciaLaboral extends Model {
 
     private Date dataFi;
     private Date dataIni;
     private String nomEmpresa;
     private String ocupacio;
-    public Estudiant m_Estudiant;
 
     public ExperienciaLaboral() {
 

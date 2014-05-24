@@ -1,8 +1,10 @@
 package models;
 
+import play.db.ebean.Model;
+
 import java.util.Date;
 
-public class Usuari {
+public class Usuari extends Model {
 
     private boolean esAdministrador;
     private boolean esBlocat;

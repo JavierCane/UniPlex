@@ -1,8 +1,12 @@
 package models;
 
-import java.util.Date;
+import play.db.ebean.Model;
 
-public class ContracteDeConveni {
+import javax.persistence.Entity;
+import java.util.Date;
+import java.util.List;
+
+public class ContracteDeConveni extends Model {
 
     private Integer ajutPerHora;
     private Date dataFi;
@@ -15,7 +19,7 @@ public class ContracteDeConveni {
     private boolean esFirmatPerDeganal;
     private boolean esFirmatPerEmpresa;
     private boolean esFirmatPerEstudiant;
-    private String formacioAdquirida;
+    private List<Coneixement> coneixementsAdquirits;
     private Integer totalDHores;
     private boolean treballaEnComunicacioEficac;
     private boolean treballaEnEmprenadoria;
@@ -25,8 +29,8 @@ public class ContracteDeConveni {
     private boolean treballaraEnAprenentatgeAutonom;
     private boolean treballaraEnTreballEnEquip;
     private boolean treballaraEnUsSolventRecursosInformacio;
-    private Integer tutorEmp;
-    private String tutorFac;
+    private Integer tutorEmpresa;
+    private String tutorFacultat;
 
     public ContracteDeConveni() {
 

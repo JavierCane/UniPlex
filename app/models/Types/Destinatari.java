@@ -1,6 +1,6 @@
 package models.types;
 
-public enum Destinataris {
+public enum Destinatari {
     estudiants,
     recentTitulats,
     titulatsAmbExperiencia

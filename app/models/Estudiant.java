@@ -1,24 +1,27 @@
 package models;
 
 import java.util.Date;
+import java.util.List;
 
-public class Estudiant extends Usuari {
+final public class Estudiant extends Usuari {
 
+    private String email;
     private String altresDades;
     private String cognom1;
     private String cognom2;
     private Date dataActualitzacio;
     private String dni;
-    private String email;
     private String fotografia;
     private String nom;
     private Integer nss;
     private String telefon;
-    public Oferta m_Oferta;
-    public CodiPostal m_CodiPostal;
-    public Idioma m_Idioma;
-    public Alerta m_Alerta;
-    public Coneixement m_Coneixement;
+    private CodiPostal codiPostal;
+    private List<Idioma> idiomaList;
+    private List<Alerta> alertaList;
+    private List<Coneixement> coneixementList;
+    private List<ExperienciaLaboral> experienciaLaboralList;
+    private List<Formacio> formacioList;
+    private List<Candidatura> candidaturaList;
 
     public Estudiant() {
 

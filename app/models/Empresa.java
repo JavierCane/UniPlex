@@ -1,21 +1,17 @@
 package models;
 
-import java.util.Date;
+final public class Empresa extends Usuari {
 
-public class Empresa extends Usuari {
-
-    private String altresDades;
-    private String cognom2;
-    private Date dataActualitzacio;
-    private String dni;
-    private String email;
-    private String fotografia;
-    private String logo;
+    private String cif;
     private String nom;
-    private Integer nss;
-    private String telefon;
-    public Alerta m_Alerta;
-    public Oferta m_Oferta;
+    private String logo;
+
+//    private String email;
+//    private String telefon;
+//    private Date dataActualitzacio;
+//    private String altresDades;
+//    private List<Oferta> oferta;
+//    private CodiPostal codiPostal;
 
     public Empresa() {
 

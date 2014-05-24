@@ -1,8 +1,10 @@
 package models;
 
+import play.db.ebean.Model;
+
 import java.util.Date;
 
-public class Formacio {
+final public class Formacio extends Model {
 
     private Date dataActualitzacio;
     private Date dataFi;
@@ -10,7 +12,6 @@ public class Formacio {
     private boolean esFinalitzat;
     private String institucio;
     private String titol;
-    public Estudiant estudiant;
 
     public Formacio() {
 

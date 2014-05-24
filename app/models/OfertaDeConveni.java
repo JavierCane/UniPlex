@@ -1,8 +1,8 @@
 package models;
 
-public class OfertaDeConveni extends Oferta {
+final public class OfertaDeConveni extends Oferta {
 
-    public ContracteDeConveni contracteDeConveni;
+//    private ContracteDeConveni contracteDeConveni;
 
     public OfertaDeConveni() {
 

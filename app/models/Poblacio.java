@@ -1,6 +1,8 @@
 package models;
 
-public class Poblacio {
+import play.db.ebean.Model;
+
+public class Poblacio extends Model {
 
     private String nom;
     public CodiPostal codiPostal;

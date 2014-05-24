@@ -1,6 +1,6 @@
 package models;
 
-public class ContracteDeConveniQueInclouTfg extends ContracteDeConveni {
+final public class ContracteDeConveniQueInclouTfg extends ContracteDeConveni {
 
     private String nomPonent;
     private String titolTfg;

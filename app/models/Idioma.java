@@ -1,13 +1,13 @@
 package models;
 
-import models.types.Nivell;
+import models.types.NivellIdioma;
+import play.db.ebean.Model;
 
-public class Idioma {
+public class Idioma extends Model {
 
     private String acreditacio;
-    private Nivell nivell;
+    private NivellIdioma nivellIdioma;
     private String nom;
-    public Oferta oferta;
 
     public Idioma() {
 
