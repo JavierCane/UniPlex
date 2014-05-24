@@ -7,7 +7,6 @@ import views.html.index;
 public class Application extends Controller {
 
     public static Result index() {
-        bool isTest = true;
         return ok( index.render( "Your new application is ready." ) );
     }
 
