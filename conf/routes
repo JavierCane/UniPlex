@@ -3,14 +3,10 @@
 # ~~~~
 
 # Home page
-GET         /                          controllers.Application.index()
-GET         /simple-result             controllers.Application.simpleResult()
-
-# Error test
-GET         /bad-request-result        controllers.Application.badRequestResult()
+GET        /                                                  controllers.students.offers.Search.index()
 
 # Offer details page
-GET         /job/:urlize/:id           controllers.Application.viewJobDetails(urlize: String, id: Long)
+GET        /offer/:companyUrlize/:offerUrlize/:offerId        controllers.students.offers.Details.viewOfferDetails(companyUrlize: String, offerUrlize: String, offerId: Long)
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file              controllers.Assets.at(path="/public", file)
+GET        /assets/*file                                      controllers.Assets.at(path="/public", file)
