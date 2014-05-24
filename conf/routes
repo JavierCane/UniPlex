@@ -13,4 +13,4 @@ GET         /bad-request-result        controllers.Application.badRequestResult(
 GET         /job/:urlize/:id           controllers.Application.viewJobDetails(urlize: String, id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
-POST        /assets/*file              controllers.Assets.at(path="/public", file)
+GET        /assets/*file              controllers.Assets.at(path="/public", file)
