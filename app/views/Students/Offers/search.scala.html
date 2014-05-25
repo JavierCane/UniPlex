@@ -3,9 +3,9 @@
 @Layout.basicLayout("Offer details") {
  <div class="container">
 		<div id="header">
-			<div class="row"> 
+			<div class="row">
 				<div class="col-md-8">
-					<img src="@routes.Assets.at("images/FIB.png")" boder="0" width"100" height"100"> 
+					<img src="@routes.Assets.at("images/FIB.png")" boder="0" width"100" height"100">
 				</div>
 
 				<form class="navbar-form navbar-left" role="search">
@@ -37,14 +37,14 @@
 					<li><a href="#">home</a></li>
 					<li><a href="#">Asignatures</a></li>
 					<li><a href="#">Grups</a></li>
-					<li><a href="#">Gestio</a></li>	
+					<li><a href="#">Gestio</a></li>
 					<li class="active"><a href="#">Comunitat</a></li>
 					<li><a href="#">Projectes</a></li>
 					<li><a href="#">Serveis</a></li>
 				</ul>
-			</div>	
+			</div>
 		</div>
-	</div> 
+	</div>
 	<!-- hasta aqui estan las fichas home asignaturas ... -->
 
 	<div class="container">
@@ -55,19 +55,46 @@
 						<li><a href="#">WebMail</a></li>
 						<li><a href="#">Fórums públics</a></li>
 						<li><a href="#">Buscar conectats</a></li>
-						<li><a href="#">Cercar estudiants</a></li>	
+						<li><a href="#">Cercar estudiants</a></li>
 						<li class="active"><a href="#">Borsa de treball</a></li>
 					</ul>
-				</div>	
-				<!-- hasta aqui estan las fichas laterales ... -->	
+				</div>
+				<!-- hasta aqui estan las fichas laterales ... -->
 
 				<div class="col-md-10">
 					<div class="panel panel-primary">
   						<div class="panel-heading"> <h4>Uniplex</h4></div>
   							<div class="panel-body">
-  						
-							</div>	
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <ul class="list-unstyled">
+                                            <li class="nav-header">
+                                                <a href="#" data-toggle="collapse" data-target="#valoresFiltroTipoOferta">
+                                                    <h5><i class="glyphicon glyphicon-euro"></i> Tipo de oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i></h5>
+                                                </a>
+                                                <ul class="list-unstyled collapse in" id="valoresFiltroTipoOferta">
+                                                    <li class="active"> <a href="#">Todas <span class="badge badge-info">15</span></a></li>
+                                                    <li><a href="#">Convenio prácticas <span class="badge badge-info">10</span></a></li>
+                                                    <li><a href="#">Contrato de trabajo <span class="badge badge-info">5</span></a></li>
+                                                </ul>
+                                                <a href="#" data-toggle="collapse" data-target="#valoresFiltroJornadaLaboral">
+                                                    <h5><i class="glyphicon glyphicon-time"></i> Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i></h5>
+                                                </a>
+                                                <ul class="list-unstyled collapse in" id="valoresFiltroJornadaLaboral">
+                                                    <li class="active"> <a href="#">Todas <span class="badge badge-info">15</span></a></li>
+                                                    <li><a href="#">Completa <span class="badge badge-info">10</span></a></li>
+                                                    <li><a href="#">Media <span class="badge badge-info">5</span></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-9">
+                                        Resultados de búsqueda
+                                    </div>
+
+
+							</div>
 						</div>
 					</div>
-				</div> 
+				</div>
 }

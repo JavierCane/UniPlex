@@ -1,12 +1,17 @@
 #header {
-	background-color:CCC8C8;	
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
-#EspaiFichas {	
-  margin-top: 100px;
+#EspaiFichas {
+    margin-top: 100px;
 }
 
 .container .container_datos {
-  margin-top: 30px;
+    margin-top: 30px;
+}
+
+/* Filtros lateral búsqueda de ofertas */
+.list-unstyled li > ul > li {
+    margin-left: 10px;
+    padding: 8px;
 }
