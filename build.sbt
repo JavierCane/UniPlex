@@ -1,6 +1,6 @@
-name := "uniPlex"
+name := "UniPlex"
 
-version := "1.0-SNAPSHOT"
+version := "0.1"
 
 libraryDependencies ++= Seq(
   javaJdbc,
