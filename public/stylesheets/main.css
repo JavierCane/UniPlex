@@ -2,16 +2,67 @@
     margin-top: 20px;
 }
 
-#EspaiFichas {
-    margin-top: 100px;
-}
-
-.container .container_datos {
-    margin-top: 30px;
-}
-
 /* Filtros lateral búsqueda de ofertas */
 .list-unstyled li > ul > li {
     margin-left: 10px;
     padding: 8px;
+}
+
+.pestanyes {	
+  margin-top: 0px;
+}
+
+.container .container_datos {
+  margin-top: 30px;
+}
+
+#page
+{
+	background-image: url("../images/degradat_blau.png");
+	background-repeat:repeat-x;
+	background-color: white;
+	min-width: 62.9em;
+	padding-bottom: 2em;
+	position: relative;
+	z-index: 2;
+}
+
+#page_centered
+{
+	width: 62.5em;
+	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+}
+
+.cap {
+	position:relative;
+	height:175px;
+	background-image: url("../images/ratlles_cap.png");
+	*background-image: url("../images/ratlles_cap.png") !important;
+	*background-image: none;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+.logos
+{
+	position:absolute;
+	left:0;
+	top:3.75em;
+}	
+
+.logos #logofib {position:relative;top:0px; padding-left: 0.3em;}
+.logos #logoupc {position:relative;top:4px;}
+
+.logos #titol {border-left:2px solid #48B0D9; padding-left:10px; margin-left:8px;font-size: 38px; color: #fcfcfc;}
+.logos #titol span {font-size: 1.5em; font-weight: bold; padding-left: 0; color: #fefefe;}
+
+.cap .buscar {
+	top: 5em;
+	position: absolute;
+
+	font-size: 0.9em;
 }
