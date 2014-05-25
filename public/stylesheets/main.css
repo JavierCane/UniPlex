@@ -66,3 +66,11 @@
 
 	font-size: 0.9em;
 }
+
+.nav-tabs.nav-justified {
+	background-color:gray;
+}
+
+.nav-tabs.nav-justified>li>a {
+	color:white;
+}
