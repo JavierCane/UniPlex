@@ -9,7 +9,11 @@
 }
 
 .pestanyes {	
-  margin-top: 0px;
+  position: absolute;
+	left: 0;
+	bottom: -1px;
+	*bottom: -1px !important;
+	*bottom: -2px;
 }
 
 .container .container_datos {
@@ -63,14 +67,17 @@
 .cap .buscar {
 	top: 5em;
 	position: absolute;
-
 	font-size: 0.9em;
 }
 
 .nav-tabs.nav-justified {
-	background-color:gray;
+	width:80%;
+	background-color:#d1ceb2;
 }
 
 .nav-tabs.nav-justified>li>a {
-	color:white;
+	color:black;
 }
+
+h4, .h4 {
+	height:2px;
