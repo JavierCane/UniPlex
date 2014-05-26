@@ -81,3 +81,29 @@
 
 h4, .h4 {
 	height:2px;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+	padding:6px 8px;
+}
+
+.parrafOrdenar {
+	font-size: 13px;
+	padding: 8px 10px 4px;
+	background-color: #DDDBDB;
+	position: relative;
+	display: inline-block;
+	width: 708px;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+
+a.list-group-item {
+	height:150px;
+}
+
+.logoEmpresa {
+	position:absolute;
+	left:40em;
+	top:3.75em;
+}
