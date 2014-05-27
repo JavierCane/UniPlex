@@ -1,4 +1,4 @@
-@(title: String, headerText: String)
+@(title: String, headerText: String, oferta: Oferta)
 
 @Layout.basicLayout(title) {
  <div id="page">	
@@ -95,8 +95,8 @@
   								<div class="row">
   									<div class="col-md-8">
 										<dl>
-    										<dt><h3>Desenvolupament en andoird</h3></dt>
-    										<dd>Estafadores Enterprise</dd>
+    										<dt><h3>@oferta.getTitol()</h3></dt>
+    										<dd>@oferta.getEmpresa().getNom()</dd>
     									</dl>
   									</div>
   									
