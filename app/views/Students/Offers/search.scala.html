@@ -1,10 +1,10 @@
-@(message: String)
+@(ofertes: List[Oferta])
 
-@Layout.basicLayout("Offer details") {
- <div id="page">	
+@Layout.basicLayout("Cerca d'ofertes de feina") {
+<div id="page">
 	<div class="container">
 		<div class="cap">
-			<div class="row"> 
+			<div class="row">
 				<div class="col-md-7">
 					<div class="logos">
 					    <a href="http://www.upc.edu"><img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")"></a>
@@ -12,8 +12,8 @@
 					    <span id="titol"><a href="https://raco.fib.upc.edu/"><img id="logoraco" src="@routes.Assets.at("images/logo_raco.png")"></a></span>
 					</div>
 				</div>
-				
-				<div class="col-md-5"> 	
+
+				<div class="col-md-5">
 					<div class="buscar">
 						<form class="navbar-form navbar-left" role="search">
 							<div class="btn-group">
@@ -30,22 +30,22 @@
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Cercar">
 							</div>
-							<span class="glyphicon glyphicon-search"></span>	
+							<span class="glyphicon glyphicon-search"></span>
 						</form>
 					</div>
 				</div>
-			</div>	
-	
+			</div>
+
 		<!-- hasta aqui hay el logo y el buscador con el boton desplegable -->
 
-			<div class="container">	
+			<div class="container">
 				<div class="pestanyes">
 					<div class="row">
 						<ul class="nav nav-tabs nav-justified">
 							<li><a href="#"><h4>home</h4></a></li>
 							<li><a href="#"><h4>Asignatures</h4></a></li>
 							<li><a href="#"><h4>Grups</h4></a></li>
-							<li><a href="#"><h4>Gestio</h4></a></li>	
+							<li><a href="#"><h4>Gestio</h4></a></li>
 							<li class="active"><a href="#"><h4>Comunitat</h4></a></li>
 							<li><a href="#"><h4>Projectes</h4></a></li>
 							<li><a href="#"><h4>Serveis</h4></a></li>
@@ -53,7 +53,7 @@
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 
 	<!-- hasta aqui estan las fichas home asignaturas ... -->
@@ -73,8 +73,8 @@
 						<li><a href="#">Gestionar convenis</a></li>
 						<li><a href="#">Gestionar alertes</a></li>
 					</ul>
-				</div>	
-				<!-- hasta aqui estan las fichas laterales ... -->	
+				</div>
+				<!-- hasta aqui estan las fichas laterales ... -->
 
 				<div class="col-md-10">
 					<div class="row">
@@ -88,178 +88,118 @@
 					</div>
 
 					<div class="panel panel-primary">
-  						<div class="panel-heading"> <h4>Ofertes de treball | Uniplex</h4></div>
-  							<div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <ul class="list-unstyled">
-                                            <li class="nav-header">
-                                                <a href="#" data-toggle="collapse" data-target="#valoresFiltroTipoOferta">
-                                                    <h5><i class="glyphicon glyphicon-euro"></i> Tipo de oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i></h5>
-                                                </a>
-                                                <ul class="list-unstyled collapse in" id="valoresFiltroTipoOferta">
-                                                    <li class="active"> <a href="#">Todas <span class="badge badge-info">15</span></a></li>
-                                                    <li><a href="#">Convenio prácticas <span class="badge badge-info">10</span></a></li>
-                                                    <li><a href="#">Contrato de trabajo <span class="badge badge-info">5</span></a></li>
-                                                </ul>
-                                                <a href="#" data-toggle="collapse" data-target="#valoresFiltroJornadaLaboral">
-                                                    <h5><i class="glyphicon glyphicon-time"></i> Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i></h5>
-                                                </a>
-                                                <ul class="list-unstyled collapse in" id="valoresFiltroJornadaLaboral">
-                                                    <li class="active"> <a href="#">Todas <span class="badge badge-info">15</span></a></li>
-                                                    <li><a href="#">Completa <span class="badge badge-info">10</span></a></li>
-                                                    <li><a href="#">Media <span class="badge badge-info">5</span></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+  						<div class="panel-heading">
+                            <h4>Ofertes de treball | UniPlex</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div id="search_sidebar" class="col-md-3">
+                                    <ul class="list-unstyled">
+                                        <li class="nav-header">
+                                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroTipoOferta">
+                                                <h5><i class="glyphicon glyphicon-euro"></i> Tipo de oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i></h5>
+                                            </a>
+                                            <ul class="list-unstyled collapse in" id="valoresFiltroTipoOferta">
+                                                <li class="active"> <a href="#">Todas <span class="badge badge-info">15</span></a></li>
+                                                <li><a href="#">Convenio prácticas <span class="badge badge-info">10</span></a></li>
+                                                <li><a href="#">Contrato de trabajo <span class="badge badge-info">5</span></a></li>
+                                            </ul>
+                                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroJornadaLaboral">
+                                                <h5><i class="glyphicon glyphicon-time"></i> Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i></h5>
+                                            </a>
+                                            <ul class="list-unstyled collapse in" id="valoresFiltroJornadaLaboral">
+                                                <li class="active"> <a href="#">Todas <span class="badge badge-info">15</span></a></li>
+                                                <li><a href="#">Completa <span class="badge badge-info">10</span></a></li>
+                                                <li><a href="#">Media <span class="badge badge-info">5</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h4>@ofertes.size() Ofertes trobades cercant ofertes per: "...."</h4>
+                                        </div>
+                                        <div class="col-md-2 ">
+                                            <a class="btn btn-lg btn-success" href="#" role="button">Crear alerta</a>
+                                        </div>
                                     </div>
 
-                                    <div class="col-md-9">				
-                                    	<div class="row">				
-		                                    <div class="col-md-9">
-		                                    	<h4>Cercant ofertes per: "...."</h4> 
-		                                    </div>
-		                                    <div class="col-md-2 ">
-		                                    	<a class="btn btn-lg btn-success" href="#" role="button">Crear alerta</a>
-		                                    </div>
-		                                </div> 
-		                                
-		                                <div class="row">
-		                                	<div id="header">
-		                                		<div class="parrafOrdenar">
-		                                			<div class="col-md-8">
-		                                				<p>
-		                                					<strong>1</strong> a <strong>5</strong> del <strong>"total"</strong>de ofertes
-		                                				</p> 
-		                                			</div>
+                                    <div class="row">
+                                        <div id="header">
+                                            <div class="parrafOrdenar">
+                                                <div class="col-md-8">
+                                                    <p>
+                                                        <strong>1</strong> a <strong>5</strong> del <strong>"total"</strong>de ofertes
+                                                    </p>
+                                                </div>
 
-		                                			<div class="col-md-2 col-md-offset-1">
-		                                				<div class="btn-group">
-														    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Ordenar per: <span class="caret"></span></button>
-														    <ul class="dropdown-menu" role="menu">
-														    	<li><a href="#">Ordenar per: </a></li>
-															    	<li class="divider"></li>	
-														    	<li><a href="#">Afinitat</a></li>
-														      	<li><a href="#">Popularitat</a></li>
-														      	<li><a href="#">Noves Ofertes</a></li>
-														    </ul>
-														 </div>		
-		                                			</div>
-		                                		</div>
-		                                	</div>		
-		                                </div>
-		                                
-		                                <div class="row">
-		                                	<div class="col-md-11">
-			                                	<div class="list-group">
-												    
-												    <a href="#" class="list-group-item ">
-												    	<dl>
-    														<dt><h5><strong>Desenvolupament en andoird</strong></h5></dt>
-    														<dd>Estafadores Enterprise</dd>
-    														<p>Barcelona</p>
-    														<p>Busques becaris.........................
-    														....................</p>
-    														<p>Contracte de Practiques | sense experiencia | mitja jornada</p>
-    													</dl>
-    													<div class="logoEmpresa">
-    														<img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
-    													</div>
-												    </a>
+                                                <div class="col-md-2 col-md-offset-1">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Ordenar per: <span class="caret"></span></button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Ordenar per: </a></li>
+                                                                <li class="divider"></li>
+                                                            <li><a href="#">Afinitat</a></li>
+                                                            <li><a href="#">Popularitat</a></li>
+                                                            <li><a href="#">Noves Ofertes</a></li>
+                                                        </ul>
+                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                            <div class="list-group">
 
+                                                @for(oferta <- ofertes) {
+                                                    <a href="#" class="list-group-item ">
+                                                        @*TODO: Tendíamos que cambiar esto ya que aquí no estamos tratando con una lista de tipo dl. Aquí estamos tratando directamente con los valores.*@
+                                                        <dl>
+                                                            <dt><h5><strong>@oferta.getTitol()</strong></h5></dt>
+                                                            <dd>@oferta.getEmpresa().getNom()</dd>
+                                                            @*TODO: Aquí habría que meter cada uno de los parámetros de la oferta siguiendo el patrón de los parámetros anteriores*@
+                                                            <p>
+                                                                @if( oferta.getInformacioOferta().length() > 128 ) {
+                                                                    @oferta.getInformacioOferta().substring( 0, 128 ) ...
+                                                                } else {
+                                                                    @oferta.getInformacioOferta()
+                                                                }
+                                                            </p>
+                                                        </dl>
+                                                        <div class="logoEmpresa">
+                                                            <img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
+                                                        </div>
+                                                    </a>
+                                                }
+                                            </div>
+                                        </div>	<!-- aqui es el final de la lista de ofertes tancat amb un col-md-11 -->
+                                    </div> <!-- tanco la row que conte la col-11 de la lista d ofertes-->
 
-												    <a href="#" class="list-group-item">
-												    	<dl>
-    														<dt><h5><strong>Desenvolupament en andoird</strong></h5></dt>
-    														<dd>Estafadores Enterprise</dd>
-    														<p>Barcelona</p>
-    														<p>Busques becaris.........................
-    														....................</p>
-    														<p>Contracte de Practiques | sense experiencia | mitja jornada</p>
-    													</dl>
-    													<div class="logoEmpresa">
-															<img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
-														</div>
-												    </a>
-
-												    <a href="#" class="list-group-item">
-												    	<dl>
-    														<dt><h5><strong>Desenvolupament en andoird</strong></h5></dt>
-    														<dd>Estafadores Enterprise</dd>
-    														<p>Barcelona</p>
-    														<p>Busques becaris.........................
-    														....................</p>
-    														<p>Contracte de Practiques | sense experiencia | mitja jornada</p>
-    													</dl>
-    													<div class="logoEmpresa">
-															<img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
-														</div>
-												    </a>
-
-												    <a href="#" class="list-group-item">
-												    	<dl>
-    														<dt><h5><strong>Desenvolupament en andoird</strong></h5></dt>
-    														<dd>Estafadores Enterprise</dd>
-    														<p>Barcelona</p>
-    														<p>Busques becaris.........................
-    														....................</p>
-    														<p>Contracte de Practiques | sense experiencia | mitja jornada</p>
-    													</dl>
-    													<div class="logoEmpresa">
-															<img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
-														</div>
-												    </a>
-
-												    <a href="#" class="list-group-item">
-												    	<dl>
-    														<dt><h5><strong>Desenvolupament en andoird</strong></h5></dt>
-    														<dd>Estafadores Enterprise</dd>
-    														<p>Barcelona</p>
-    														<p>Busques becaris.........................
-    														....................</p>
-    														<p>Contracte de Practiques | sense experiencia | mitja jornada</p>
-    													</dl>
-    													<div class="logoEmpresa">
-															<img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
-														</div>
-												    </a>
-
-												</div>
-											</div>	<!-- aqui es el final de la lista de ofertes tancat amb un col-md-11 -->
-		                                </div> <!-- tanco la row que conte la col-11 de la lista d ofertes-->
-		                                
-		                                <div class="row"> <!-- una row nova per la paginacacio esta dintre del panel body-->
-		                                	<div class="col-md-3"></div>
-		                                	<div class="col-md-5">
-		                                		<ul class="pagination">
-												  	<li><a href="#">&laquo;</a></li>
-												  	<li class="active"><a href="#">1</a></li>
-												  	<li><a href="#">2</a></li>
-												  	<li><a href="#">3</a></li>
-												  	<li><a href="#">4</a></li>
-												  	<li><a href="#">5</a></li>
-												  	<li><a href="#">&raquo;</a></li>
-												</ul>
-		                                	</div>	
-		                                </div>   	
-		                                   	
-		                                   	
-		                                   	
-		                                   	
-		                                   		
-		                            </div> 
-
-
-
-		         
-								</div>
-							</div> <!-- aqui cierro el panel faltaria poner adentro la paginacion para los resultados -->
-						</div>
-					</div> <!-- cierre de todo el panel apartir de aqui ya no va nada -->
+                                    <div class="row"> <!-- una row nova per la paginacacio esta dintre del panel body-->
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-5">
+                                            <ul class="pagination">
+                                                <li><a href="#">&laquo;</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#">&raquo;</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div> @* END col-md-9 (Columna resultados de búsqueda) *@
+                            </div> @* END row *@
+                        </div> @* END panel-body *@
+                    </div> @* END panel panel-primary *@
 				</div>
-			</div>
-		</div>
-	</div>
-</div>				
+			</div> @* END row (contenido) *@
+		</div> @* END roheader *@
+	</div> @* END rocontainer *@
+</div> @* END page *@
 }

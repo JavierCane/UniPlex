@@ -20,7 +20,6 @@ final public class Estudiant extends Usuari {
     private String cognom2;
     private Date dataActualitzacio;
     private String fotografia;
-    private String nom;
     private Integer nss;
     private String telefon;
     private CodiPostal codiPostal;
@@ -31,7 +30,22 @@ final public class Estudiant extends Usuari {
     private List<Formacio> formacioList;
     private List<Candidatura> candidaturaList;
 
-    public Estudiant() {
-
+    public Estudiant( String nom, String user, String password, String email, boolean esAdministrador, boolean esBlocat, boolean esDeganal, Date expiracioBlocatge, String motiuBlocatge, List<Candidatura> candidaturaList, String dni, String altresDades, String cognom1, String cognom2, Date dataActualitzacio, String fotografia, Integer nss, String telefon, CodiPostal codiPostal, List<Idioma> idiomaList, List<Alerta> alertaList, List<Coneixement> coneixementList, List<ExperienciaLaboral> experienciaLaboralList, List<Formacio> formacioList ) {
+        super( nom, user, password, email, esAdministrador, esBlocat, esDeganal, expiracioBlocatge, motiuBlocatge );
+        this.candidaturaList = candidaturaList;
+        this.dni = dni;
+        this.altresDades = altresDades;
+        this.cognom1 = cognom1;
+        this.cognom2 = cognom2;
+        this.dataActualitzacio = dataActualitzacio;
+        this.fotografia = fotografia;
+        this.nss = nss;
+        this.telefon = telefon;
+        this.codiPostal = codiPostal;
+        this.idiomaList = idiomaList;
+        this.alertaList = alertaList;
+        this.coneixementList = coneixementList;
+        this.experienciaLaboralList = experienciaLaboralList;
+        this.formacioList = formacioList;
     }
 }

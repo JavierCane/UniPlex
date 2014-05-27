@@ -1,4 +1,4 @@
-This is your new Play application
+UniPlex
 =====================================
 
-This file will be packaged with your application, when using `play dist`.
+Proyecto usando Play (Framework web en Java y Scala) para la asignatura de Projecte d'Enginyeria del Software de la FIB.

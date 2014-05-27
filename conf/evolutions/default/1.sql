@@ -14,12 +14,14 @@ create table oferta (
   tipus                     varchar(31) not null,
   id                        integer auto_increment not null,
   titol                     varchar(255) not null,
-  informacio_oferta         varchar(255) not null,
+  informacio_oferta         longtext not null,
+  jornada_laboral           varchar(10) not null,
   data_insercio             datetime not null,
   data_caducitat            datetime,
   nom_persona_contacte      varchar(255),
   email_persona_contacte    varchar(255),
   empresa_id                integer,
+  constraint ck_oferta_jornada_laboral check (jornada_laboral in ('Indiferent','Completa','Mitja')),
   constraint pk_oferta primary key (id))
 ;
 

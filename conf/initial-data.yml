@@ -1,0 +1,330 @@
+###########################################################################
+############################### Coneixement ###############################
+###########################################################################
+
+Coneixement:
+
+    - !!models.Coneixement  &c_php
+        nom:      PHP
+
+    - !!models.Coneixement  &c_cpp
+        nom:      C++
+
+    - !!models.Coneixement  &c_java
+        nom:      Java
+
+    - !!models.Coneixement  &c_sql
+        nom:      SQL
+
+    - !!models.Coneixement  &c_oracle
+        nom:      Oracle
+
+    - !!models.Coneixement  &c_mysql
+        nom:      MySQL
+
+    - !!models.Coneixement  &c_scala
+        nom:      Scala
+
+    - !!models.Coneixement  &c_html
+        nom:      HTML
+
+    - !!models.Coneixement  &c_css
+        nom:      CSS
+
+    - !!models.Coneixement  &c_jquery
+        nom:      jQuery
+
+    - !!models.Coneixement  &c_neo4j
+        nom:      Neo4j
+
+    - !!models.Coneixement  &c_mongodb
+        nom:      MongoDB
+
+    - !!models.Coneixement  &c_infrastructure
+        nom:      Infrastructure
+    
+###########################################################################
+################################## Empresa ################################
+###########################################################################
+
+Empresa:
+
+    - !!models.Empresa      &e_oracle
+        nom:                Oracle
+        user:               oracle
+        password:           oracleMola
+        email:              info@oracle.com
+        esAdministrador:    false
+        esBlocat:           false
+        esDeganal:          false
+        expiracioBlocatge:  null
+        motiuBlocatge:      null
+        cif:                12345678A
+        logo:               oracle-logo.png
+        telefon:            931234567
+
+    - !!models.Empresa      &e_google
+        nom:                Google
+        user:               google
+        password:           googleMola
+        email:              info@google.com
+        esAdministrador:    false
+        esBlocat:           false
+        esDeganal:          false
+        expiracioBlocatge:  null
+        motiuBlocatge:      null
+        cif:                22345678A
+        logo:               google-logo.png
+        telefon:            931234567
+
+    - !!models.Empresa      &e_uniplex
+        nom:                UniPlex
+        user:               uniplex
+        password:           uniplexMola
+        email:              info@uniplex.com
+        esAdministrador:    false
+        esBlocat:           false
+        esDeganal:          false
+        expiracioBlocatge:  null
+        motiuBlocatge:      null
+        cif:                32345678A
+        logo:               uniplex-logo.png
+        telefon:            931234567
+
+    - !!models.Empresa      &e_fib
+        nom:                FIB
+        user:               fib
+        password:           fibMola
+        email:              info@fib.com
+        esAdministrador:    false
+        esBlocat:           false
+        esDeganal:          false
+        expiracioBlocatge:  null
+        motiuBlocatge:      null
+        cif:                42345678A
+        logo:               fib-logo.png
+        telefon:            931234567
+
+    - !!models.Empresa      &e_ub
+        nom:                UB
+        user:               ub
+        password:           ubMola
+        email:              info@ub.com
+        esAdministrador:    false
+        esBlocat:           false
+        esDeganal:          false
+        expiracioBlocatge:  null
+        motiuBlocatge:      null
+        cif:                52345678A
+        logo:               ub-logo.png
+        telefon:            931234567
+
+###########################################################################
+############################### OfertaLaboral #############################
+###########################################################################
+
+OfertaDeConveni:
+
+    - !!models.OfertaDeConveni
+        titol:                SQL Developer Internship
+        informacioOferta:     Prácticas en Orcale, situada en el estado de California… remuneradas…
+        jornadaLaboral:       INDIFERENT
+        dataInsercio:         '2014-05-25T21:15:00'
+        dataCaducitat:        2014-09-14
+        nomPersonaContacte:   Larry Ellison
+        emailPersonaContacte: larry.ellison@oracle.com
+        coneixementList:      [*c_sql, *c_oracle]
+        empresa:              *e_oracle
+
+OfertaLaboral:
+
+    - !!models.OfertaLaboral
+        titol:                Software Engineering
+        informacioOferta:     Google’s software engineers develop the next-generation technologies that change how millions interact, making accessible and useful the world’s information, and our ambitions reach far beyond just Search. To handle information at the the scale of the web requires ideas from every area of computer science, including information retrieval, artificial intelligence, machine learning, natural language processing, distributed computing, large-scale system design, networking, security, data compression and user interface design; the list goes on and is growing every day. As a software engineer, you work on a small team and can switch teams and projects as our fast-paced business grows and evolves. We need our engineers to be versatile and always eager to tackle new problems as we continue to push technology forward.
+        jornadaLaboral:       COMPLETA
+        dataInsercio:         '2014-05-27T10:22:00'
+        dataCaducitat:        2015-10-14
+        nomPersonaContacte:   Matt Cutts
+        emailPersonaContacte: matt.cutts@google.com
+        coneixementList:      [*c_java, *c_cpp, *c_sql]
+        empresa:              *e_google
+
+    - !!models.OfertaLaboral
+        titol:                Technical Infrastructure
+        informacioOferta:     Make Google's services fast and reliable for billions of users. This team, also known as Site Reliability Engineering, combines software development, networking and systems engineering expertise to build and run large scale, massively distributed, fault-tolerant software systems and infrastructure. We hire creative engineers and technology enthusiasts who enjoy being challenged by problems of scale and complexity, with a strong desire to make services better for users.
+        jornadaLaboral:       COMPLETA
+        dataInsercio:         '2014-05-27T10:22:00'
+        dataCaducitat:        2015-10-14
+        nomPersonaContacte:   Matt Cutts
+        emailPersonaContacte: matt.cutts@google.com
+        coneixementList:      [*c_infrastructure, *c_sql]
+        empresa:              *e_google
+
+#projects:
+#
+#    - !!models.Project
+#        id:         1
+#        name:       Play 2.0
+#        folder:     Play framework
+#        members:
+#            - !!models.User
+#                email: guillaume@sample.com
+#            - !!models.User
+#                email: maxime@sample.com
+#            - !!models.User
+#                email: sadek@sample.com
+#            - !!models.User
+#                email: erwan@sample.com
+#
+#    - !!models.Project
+#        id:         2
+#        name:       Play 1.2.4
+#        folder:     Play framework
+#        members:
+#            - !!models.User
+#                email: guillaume@sample.com
+#            - !!models.User
+#                email: erwan@sample.com
+#
+#    - !!models.Project
+#        id:         3
+#        name:       Website
+#        folder:     Play framework
+#        members:
+#            - !!models.User
+#                email: guillaume@sample.com
+#            - !!models.User
+#                email: maxime@sample.com
+#
+#    - !!models.Project
+#        id:         4
+#        name:       Secret project
+#        folder:     Zenexity
+#        members:
+#            - !!models.User
+#                email: guillaume@sample.com
+#            - !!models.User
+#                email: maxime@sample.com
+#            - !!models.User
+#                email: sadek@sample.com
+#            - !!models.User
+#                email: erwan@sample.com
+#
+#    - !!models.Project
+#        id:         5
+#        name:       Playmate
+#        folder:     Zenexity
+#        members:
+#            - !!models.User
+#                email: maxime@sample.com
+#
+#    - !!models.Project
+#        id:         6
+#        name:       Things to do
+#        folder:     Personal
+#        members:
+#            - !!models.User
+#                email: guillaume@sample.com
+#
+#    - !!models.Project
+#        id:         7
+#        name:       Play samples
+#        folder:     Zenexity
+#        members:
+#            - !!models.User
+#                email: guillaume@sample.com
+#            - !!models.User
+#                email: maxime@sample.com
+#
+#    - !!models.Project
+#        id:         8
+#        name:       Private
+#        folder:     Personal
+#        members:
+#            - !!models.User
+#                email: guillaume@sample.com
+#
+#    - !!models.Project
+#        id:         9
+#        name:       Private
+#        folder:     Personal
+#        members:
+#            - !!models.User
+#                email: erwan@sample.com
+#
+#    - !!models.Project
+#        id:         10
+#        name:       Private
+#        folder:     Personal
+#        members:
+#            - !!models.User
+#                email: sadek@sample.com
+#
+#    - !!models.Project
+#        id:         11
+#        name:       Private
+#        folder:     Personal
+#        members:
+#            - !!models.User
+#                email: maxime@sample.com
+#
+## Task
+#
+#tasks:
+#
+#    - !!models.Task
+#        title:      Fix the documentation
+#        done:       false
+#        folder:     Todo
+#        project:    !!models.Project
+#                        id: 1
+#        assignedTo: !!models.User
+#                        email: guillaume@sample.com
+#
+#    - !!models.Task
+#        title:      Prepare the beta release
+#        done:       false
+#        folder:     Urgent
+#        dueDate:    2011-11-15
+#        project:    !!models.Project
+#                        id: 1
+#        assignedTo: !!models.User
+#                        email: guillaume@sample.com
+#
+#    - !!models.Task
+#        title:      Buy some milk
+#        done:       false
+#        folder:     Todo
+#        project:    !!models.Project
+#                        id: 9
+#
+#    - !!models.Task
+#        title:      Check 1.2.4-RC2
+#        done:       false
+#        folder:     Todo
+#        dueDate:    2011-11-18
+#        project:    !!models.Project
+#                        id: 2
+#        assignedTo: !!models.User
+#                        email: guillaume@sample.com
+#
+#    - !!models.Task
+#        title:      Finish zentask integration
+#        done:       true
+#        folder:     Todo
+#        dueDate:    2011-11-15
+#        project:    !!models.Project
+#                        id: 7
+#        assignedTo: !!models.User
+#                        email: maxime@sample.com
+#
+#    - !!models.Task
+#        title:      Release the secret project
+#        done:       false
+#        folder:     Todo
+#        dueDate:    2012-01-01
+#        project:    !!models.Project
+#                        id: 4
+#        assignedTo: !!models.User
+#                        email: sadek@sample.com
+#

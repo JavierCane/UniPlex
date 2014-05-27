@@ -9,6 +9,6 @@ public class Details extends Controller {
     public static Result viewOfferDetails( String companyUrlize, String offerUrlize, long offerId ) {
         String headerText = "Job details for offer ID: " + offerId + ", companyUrlize: " + companyUrlize + ", offerUrlize: " + offerUrlize;
 
-        return ok( details.render( companyUrlize + " offer details | UniPlex", headerText ) );
+        return ok( details.render( offerUrlize + " a " + companyUrlize, headerText ) );
     }
 }
