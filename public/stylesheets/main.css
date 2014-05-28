@@ -69,18 +69,13 @@
 	position: absolute;
 	font-size: 0.9em;
 }
-
 .nav-tabs.nav-justified {
 	width:80%;
-	background-color:#d1ceb2;
 }
-
 .nav-tabs.nav-justified>li>a {
 	color:black;
-}
-
-h4, .h4 {
-	height:2px;
+	background:#CCCCC9;
+	padding:0px 5px;
 }
 
 .btn-lg, .btn-group-lg>.btn {

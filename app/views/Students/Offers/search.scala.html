@@ -13,27 +13,20 @@
 					</div>
 				</div>
 
-				<div class="col-md-5">
-					<div class="buscar">
-						<form class="navbar-form navbar-left" role="search">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-									Cercar ofertes<span class="caret"> </span>
-								</button>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Cercar oferta de treball</a></li>
-									<li><a href="#">Estudiants</a></li>
-									<li><a href="#">Personal FIB</a></li>
-								</ul>
-							</div>
-
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Cercar">
-							</div>
-							<span class="glyphicon glyphicon-search"></span>
-						</form>
+				<div class="col-md-5">					
+                    <div class="buscar">
+						<form action="/cercar" method="post">
+                            <select id="tipus_cerca" name="tipus">
+                                <option selected value="Cercar ofertes">Cercar ofertes </option>
+                                <option value="Estudiants">Estudiants</option>
+                                <option value="personal">Personal UPC</option>
+                            </select>
+                            <input id="camp_cerca" name="q" type="text">
+                            <button type="submit" ><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
 					</div>
 				</div>
+
 			</div>
 
 		<!-- hasta aqui hay el logo y el buscador con el boton desplegable -->
@@ -42,7 +35,7 @@
 				<div class="pestanyes">
 					<div class="row">
 						<ul class="nav nav-tabs nav-justified">
-							<li><a href="#"><h4>home</h4></a></li>
+						    <li ><a href="#"><h4><span class="glyphicon glyphicon-home"></h4></a></li>
 							<li><a href="#"><h4>Asignatures</h4></a></li>
 							<li><a href="#"><h4>Grups</h4></a></li>
 							<li><a href="#"><h4>Gestio</h4></a></li>
@@ -52,7 +45,7 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div>   
 		</div>
 	</div>
 
@@ -72,6 +65,7 @@
 						<li><a href="#">Candidatures</a></li>
 						<li><a href="#">Gestionar convenis</a></li>
 						<li><a href="#">Gestionar alertes</a></li>
+                        <li><a href="#">Incidencia</a></li>
 					</ul>
 				</div>
 				<!-- hasta aqui estan las fichas laterales ... -->
@@ -136,16 +130,14 @@
                                                 </div>
 
                                                 <div class="col-md-2 col-md-offset-1">
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Ordenar per: <span class="caret"></span></button>
-                                                        <ul class="dropdown-menu" role="menu">
-                                                            <li><a href="#">Ordenar per: </a></li>
-                                                                <li class="divider"></li>
-                                                            <li><a href="#">Afinitat</a></li>
-                                                            <li><a href="#">Popularitat</a></li>
-                                                            <li><a href="#">Noves Ofertes</a></li>
-                                                        </ul>
-                                                     </div>
+                                                    <form action="/ordena" method="post">
+                                                        <select id="tipus_ordena" name="ordena">
+                                                            <option selected value="Ordenar per">Ordenar per </option>
+                                                            <option value="Afinitat">Afinitat</option>
+                                                            <option value="Popularitat">Popularitat</option>
+                                                            <option value="Noves ofertes">Noves ofertes</option>
+                                                        </select>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

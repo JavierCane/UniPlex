@@ -1,10 +1,10 @@
 @(title: String, headerText: String, oferta: Oferta)
 
 @Layout.basicLayout(title) {
- <div id="page">	
+ <div id="page">
 	<div class="container">
 		<div class="cap">
-			<div class="row"> 
+			<div class="row">
 				<div class="col-md-7">
 					<div class="logos">
 					    <a href="http://www.upc.edu"><img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")"></a>
@@ -12,40 +12,33 @@
 					    <span id="titol"><a href="https://raco.fib.upc.edu/"><img id="logoraco" src="@routes.Assets.at("images/logo_raco.png")"></a></span>
 					</div>
 				</div>
-				
-				<div class="col-md-5"> 	
-					<div class="buscar">
-						<form class="navbar-form navbar-left" role="search">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-									Cercar ofertes<span class="caret"> </span>
-								</button>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Cercar oferta de treball</a></li>
-									<li><a href="#">Estudiants</a></li>
-									<li><a href="#">Personal FIB</a></li>
-								</ul>
-							</div>
 
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Cercar">
-							</div>
-							<span class="glyphicon glyphicon-search"></span>	
-						</form>
+				<div class="col-md-5">					
+                    <div class="buscar">
+						<form action="/cercar" method="post">
+                            <select id="tipus_cerca" name="tipus">
+                                <option selected value="Cercar ofertes">Cercar ofertes </option>
+                                <option value="Estudiants">Estudiants</option>
+                                <option value="personal">Personal UPC</option>
+                            </select>
+                            <input id="camp_cerca" name="q" type="text">
+                            <button type="submit" ><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
 					</div>
 				</div>
-			</div>	
-	
+
+			</div>
+
 		<!-- hasta aqui hay el logo y el buscador con el boton desplegable -->
 
-			<div class="container">	
+			<div class="container">
 				<div class="pestanyes">
 					<div class="row">
 						<ul class="nav nav-tabs nav-justified">
-							<li><a href="#"><h4>home</h4></a></li>
+						    <li ><a href="#"><h4><span class="glyphicon glyphicon-home"></h4></a></li>
 							<li><a href="#"><h4>Asignatures</h4></a></li>
 							<li><a href="#"><h4>Grups</h4></a></li>
-							<li><a href="#"><h4>Gestio</h4></a></li>	
+							<li><a href="#"><h4>Gestio</h4></a></li>
 							<li class="active"><a href="#"><h4>Comunitat</h4></a></li>
 							<li><a href="#"><h4>Projectes</h4></a></li>
 							<li><a href="#"><h4>Serveis</h4></a></li>
@@ -53,7 +46,7 @@
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 	
 	
@@ -73,6 +66,7 @@
 						<li><a href="#">Candidatures</a></li>
 						<li><a href="#">Gestionar convenis</a></li>
 						<li><a href="#">Gestionar alertes</a></li>
+						<li><a href="#">Incidencia</a></li>
 					</ul>
 				</div>	
 				<!-- hasta aqui estan las fichas laterales ... -->	
@@ -84,7 +78,7 @@
 							  <li><a href="#">Comunitat</a></li>
 							  <li><a href="#">Borsa de treball</a></li>
 							  <li class="active">Ofertes de treball</li>
-							  <li class="active">Consulta Oferta de treball</li>
+							  <li class="active">@oferta.getTitol()</li>
 							</ol>
 						</div>
 					</div>
@@ -107,25 +101,29 @@
   									<div class="col-md-10">
   										<dl>
 	  										<dt><strong class="text-danger"><h3>Estat de la oferta</strong></h3></dt>
-	  											<dd><strong>Informacio: </strong>pos eso una mierda</dd>
-	  											<dd><strong>Horari: </strong></dd>
-	  											<dd><strong>Localitzacio: </strong></dd>
-	  											<dd><strong>Persona de contacte: </strong></dd>
-	  											<dd><strong>Email: </strong></dd>
-	  											<dd><strong>Data de caducitat: </strong></dd>
+	  											<dd><strong>Informacio: </strong>@oferta.getInformacioOferta()</dd><br>
+	  											<dd><strong>JornadaLaboral: </strong>@oferta.getJornadaLaboral()</dd><br>
+	  											<dd><strong>Localitzacio: </strong>"Barcelona"</dd><br>
+	  											<dd><strong>Persona de contacte: </strong>@oferta.getNomPersonaContacte()</dd><br>
+	  											<dd><strong>Email: </strong>@oferta.getEmailPersonaContacte</dd><br>
+	  											<dd><strong>Data de caducitat: </strong>@oferta.getDataCaducitat</dd>
 
 	  										<dt><strong class="text-danger"><h3>Requisits:</strong></h3></dt>
-	  											<dd><strong>Titulació: </strong>merengue merengue</dd>
-	  											<dd><strong>Experiencia: </strong></dd>
-	  											<dd><strong>Idiomes: </strong></dd>
+	  											<dd><strong>Titulació: </strong>merengue merengue</dd><br>
+	  											<dd><strong>Experiencia: </strong></dd><br>
+	  											<dd><strong>Idiomes: </strong></dd><br>
 
 	  										<dt><strong class="text-danger"><h3>Descripció:</strong></h3></dt>
 												<dd><strong>Text: </strong></dd>
 													  								
 	  										<dt><strong class="text-danger"><h3>Coneixements:</strong></h3></dt>
-	  											<dd><strong>CODI 1 </strong></dd>
-	  											<dd><strong>CODI 2 </strong></dd>
-	  											<dd><strong>CODI 3 </strong></dd>
+	  											<ul class="list-group">
+                                                	
+                                                </ul> 
+                                            
+
+
+
 	  									</dl>	
   									</div>	
   																
