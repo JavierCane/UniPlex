@@ -29,6 +29,55 @@
         <![endif]-->
     </head>
     <body>
-        @content
+        <div id="page">
+            <div class="container">
+                <div class="cap">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="logos">
+                                <a href="http://www.upc.edu"><img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")"></a>
+                                <a href="http://www.fib.upc.edu"><img id="logofib" src="@routes.Assets.at("images/Logo_FIB.gif")"></a>
+                                <span id="titol"><a href="https://raco.fib.upc.edu/"><img id="logoraco" src="@routes.Assets.at("images/logo_raco.png")"></a></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="buscar">
+                                <form action="/cercar" method="post">
+                                    <select id="tipus_cerca" name="tipus">
+                                        <option selected value="Cercar ofertes">Cercar ofertes </option>
+                                        <option value="Estudiants">Estudiants</option>
+                                        <option value="personal">Personal UPC</option>
+                                    </select>
+                                    <input id="camp_cerca" name="q" type="text">
+                                    <button type="submit" ><span class="glyphicon glyphicon-search"></span></button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                        <!-- hasta aqui hay el logo y el buscador con el boton desplegable -->
+
+                    <div class="container">
+                        <div class="pestanyes">
+                            <div class="row">
+                                <ul class="nav nav-tabs nav-justified">
+                                    <li ><a href="#"><h4><span class="glyphicon glyphicon-home"></h4></a></li>
+                                    <li><a href="#"><h4>Asignatures</h4></a></li>
+                                    <li><a href="#"><h4>Grups</h4></a></li>
+                                    <li><a href="#"><h4>Gestio</h4></a></li>
+                                    <li class="active"><a href="#"><h4>Comunitat</h4></a></li>
+                                    <li><a href="#"><h4>Projectes</h4></a></li>
+                                    <li><a href="#"><h4>Serveis</h4></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @content
+        </div>
     </body>
 </html>

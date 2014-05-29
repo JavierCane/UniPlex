@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Inheritance( strategy = InheritanceType.SINGLE_TABLE )
 @DiscriminatorColumn( name = "tipus", discriminatorType = DiscriminatorType.STRING )
-public abstract class Oferta extends Model {
+public class Oferta extends Model {
 
     @Id
     @GeneratedValue
