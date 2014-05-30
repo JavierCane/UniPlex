@@ -129,6 +129,7 @@ OfertaDeConveni:
         titol:                SQL Developer Internship
         informacioOferta:     Prácticas en Orcale, situada en el estado de California… remuneradas…
         jornadaLaboral:       INDIFERENT
+        destinatari:          ESTUDIANTS
         dataInsercio:         '2014-05-25T21:15:00'
         dataCaducitat:        2014-09-14
         nomPersonaContacte:   Larry Ellison
@@ -142,6 +143,7 @@ OfertaLaboral:
         titol:                Software Engineering
         informacioOferta:     Google’s software engineers develop the next-generation technologies that change how millions interact, making accessible and useful the world’s information, and our ambitions reach far beyond just Search. To handle information at the the scale of the web requires ideas from every area of computer science, including information retrieval, artificial intelligence, machine learning, natural language processing, distributed computing, large-scale system design, networking, security, data compression and user interface design; the list goes on and is growing every day. As a software engineer, you work on a small team and can switch teams and projects as our fast-paced business grows and evolves. We need our engineers to be versatile and always eager to tackle new problems as we continue to push technology forward.
         jornadaLaboral:       COMPLETA
+        destinatari:          ACABATS_DE_TITULAR
         dataInsercio:         '2014-05-27T10:22:00'
         dataCaducitat:        2015-10-14
         nomPersonaContacte:   Matt Cutts
@@ -153,6 +155,7 @@ OfertaLaboral:
         titol:                Technical Infrastructure
         informacioOferta:     Make Google's services fast and reliable for billions of users. This team, also known as Site Reliability Engineering, combines software development, networking and systems engineering expertise to build and run large scale, massively distributed, fault-tolerant software systems and infrastructure. We hire creative engineers and technology enthusiasts who enjoy being challenged by problems of scale and complexity, with a strong desire to make services better for users.
         jornadaLaboral:       COMPLETA
+        destinatari:          INDIFERENT
         dataInsercio:         '2014-05-27T10:22:00'
         dataCaducitat:        2015-10-14
         nomPersonaContacte:   Matt Cutts

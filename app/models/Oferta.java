@@ -1,5 +1,6 @@
 package models;
 
+import models.types.Destinatari;
 import models.types.JornadaLaboral;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
@@ -40,6 +41,11 @@ public class Oferta extends Model {
     protected JornadaLaboral jornadaLaboral;
 
     @NotNull
+    @Constraints.Required
+    @Enumerated( EnumType.STRING )
+    protected Destinatari destinatari;
+
+    @NotNull
     @Temporal( TemporalType.TIMESTAMP )
     protected Date dataInsercio;
 
@@ -70,10 +76,11 @@ public class Oferta extends Model {
 //    private CodiPostal codiPostal;
 //    private List<Candidatura> candidaturaList;
 
-    public Oferta( String titol, String informacioOferta, JornadaLaboral jornadaLaboral, Date dataInsercio, Date dataCaducitat, String nomPersonaContacte, String emailPersonaContacte, List<Coneixement> coneixementList, Empresa empresa ) {
+    public Oferta( String titol, String informacioOferta, JornadaLaboral jornadaLaboral, Destinatari destinatari, Date dataInsercio, Date dataCaducitat, String nomPersonaContacte, String emailPersonaContacte, List<Coneixement> coneixementList, Empresa empresa ) {
         this.titol = titol;
         this.informacioOferta = informacioOferta;
         this.jornadaLaboral = jornadaLaboral;
+        this.destinatari = destinatari;
         this.dataInsercio = dataInsercio;
         this.dataCaducitat = dataCaducitat;
         this.nomPersonaContacte = nomPersonaContacte;
@@ -112,6 +119,14 @@ public class Oferta extends Model {
 
     public void setJornadaLaboral( JornadaLaboral jornadaLaboral ) {
         this.jornadaLaboral = jornadaLaboral;
+    }
+
+    public Destinatari getDestinatari() {
+        return destinatari;
+    }
+
+    public void setDestinatari( Destinatari destinatari ) {
+        this.destinatari = destinatari;
     }
 
     public Date getDataInsercio() {

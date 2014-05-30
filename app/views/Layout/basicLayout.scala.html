@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, cerca: String)(content: Html)
 
 <!DOCTYPE html>
 <html lang="es">
@@ -41,26 +41,34 @@
                             </div>
                         </div>
                         <div class="col-md-3"></div>
-                        <div class="col-md-1">
-                            <div class="buscarSelector">
-                                <form action="/cercar" method="post">
-                                    <select id="tipus_cerca" name="tipus">
-                                        <option selected value="Cercar ofertes">Cercar ofertes </option>
-                                        <option value="Estudiants">Estudiants</option>
-                                        <option value="personal">Personal UPC</option>
-                                    </select>
-                                </form>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="buscar">
-                                <form class="navbar-form navbar-left" role="search">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Cercar.." data-translatable-string="Search">
-                                    </div>
-                                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></button>
-                                </form>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="buscarSelector">
+                                    @helper.form( action = controllers.students.offers.routes.Search.index) {
+                                        <div class="col-md-5">
+                                            <select id="tipus_cerca" name="cercar">
+                                                <option selected value="ofertes-de-treball">Ofertes de treball</option>
+                                                <option value="estudiants">Estudiants</option>
+                                                <option value="personal-upc">Personal UPC</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Cerca" name="cerca"
+                                                    @if( cerca != null ) {
+                                                        value="@cerca">
+                                                        } else {
+                                                        >
+                                                    }
+                                                <span class="input-group-btn">
+                                                    <button type="submit" class="btn btn-default" style="padding: 6px 15px">
+                                                        <span class="glyphicon glyphicon-search"></span>
+                                                    </button>
+                                                </span>
+                                            </div><!-- /input-group -->
+                                        </div>
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
-@(ofertes: List[Oferta])
+@(ofertes: List[Oferta], cerca: String)
 @import java.net.URLEncoder
 
-@Layout.basicLayout("Cerca d'ofertes de feina") {
+@Layout.basicLayout( "Cerca d'ofertes de feina", cerca ) {
     <div class="container">
         <div id="header">
             <div class="row">
@@ -41,26 +41,35 @@
                                     <ul class="list-unstyled">
                                         <li class="nav-header">
                                             <a href="#" data-toggle="collapse" data-target="#valoresFiltroTipoOferta">
-                                                <h5><i class="glyphicon glyphicon-euro"></i>
-                                                    Tipo de oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i></h5>
+                                                <h5>
+                                                    <i class="glyphicon glyphicon-euro"></i>Tipus d'oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                                </h5>
                                             </a>
                                             <ul class="list-unstyled collapse in" id="valoresFiltroTipoOferta">
-                                                <li class="active"> <a href="#">Todas <span class="badge badge-info">
-                                                    15</span></a></li>
-                                                <li><a href="#">Convenio prácticas <span class="badge badge-info">
-                                                    10</span></a></li>
-                                                <li><a href="#">Contrato de trabajo <span class="badge badge-info">
-                                                    5</span></a></li>
+                                                <li class="active"> <a href="#">Indiferent <span class="badge badge-info">15</span></a></li>
+                                                <li><a href="#">Conveni de pràctiques <span class="badge badge-info">10</span></a></li>
+                                                <li><a href="#">Contracte laboral <span class="badge badge-info">5</span></a></li>
                                             </ul>
                                             <a href="#" data-toggle="collapse" data-target="#valoresFiltroJornadaLaboral">
-                                                <h5><i class="glyphicon glyphicon-time"></i>
-                                                    Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i></h5>
+                                                <h5>
+                                                    <i class="glyphicon glyphicon-time"></i>Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                                </h5>
                                             </a>
                                             <ul class="list-unstyled collapse in" id="valoresFiltroJornadaLaboral">
-                                                <li class="active"> <a href="#">Todas <span class="badge badge-info">
-                                                    15</span></a></li>
+                                                <li class="active"> <a href="#">Indiferent <span class="badge badge-info">15</span></a></li>
                                                 <li><a href="#">Completa <span class="badge badge-info">10</span></a></li>
                                                 <li><a href="#">Media <span class="badge badge-info">5</span></a></li>
+                                            </ul>
+                                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroDestinataris">
+                                                <h5>
+                                                    <i class="glyphicon glyphicon-user"></i>Destinataris <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                                </h5>
+                                            </a>
+                                            <ul class="list-unstyled collapse in" id="valoresFiltroDestinataris">
+                                                <li class="active"> <a href="#">Indiferent <span class="badge badge-info">30</span></a></li>
+                                                <li><a href="#">Estudiants <span class="badge badge-info">15</span></a></li>
+                                                <li><a href="#">Acabats de titular <span class="badge badge-info">10</span></a></li>
+                                                <li><a href="#">Titulats amb experiència <span class="badge badge-info">5</span></a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -69,7 +78,12 @@
                                 <div class="col-md-9">
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h4>@ofertes.size() Ofertes trobades cercant ofertes per: "...."</h4>
+                                            <h4>
+                                                @ofertes.size() Ofertes trobades
+                                                @if( cerca != null ) {
+                                                     cercant per: "@cerca".
+                                                }
+                                            </h4>
                                         </div>
                                         <div class="col-md-2 ">
                                             <a class="btn btn-lg btn-success" href="#" role="button">Crear alerta</a>
@@ -81,8 +95,7 @@
                                             <div class="parrafOrdenar">
                                                 <div class="col-md-5">
                                                     <p>
-                                                        <strong>1</strong> a <strong>5</strong> del <strong>"total"</strong>
-                                                        de ofertes
+                                                        <strong>1</strong> a <strong>5</strong> del <strong>"total"</strong> de ofertes
                                                     </p>
                                                 </div>
 

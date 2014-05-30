@@ -2,11 +2,10 @@
 // Basado en: https://github.com/playframework/playframework/tree/master/samples/java/zentasks
 
 import com.avaje.ebean.Ebean;
-import models.Coneixement;
 import models.Empresa;
-import models.Oferta;
 import play.Application;
 import play.GlobalSettings;
+import play.Logger;
 import play.libs.Yaml;
 
 import java.util.List;
@@ -15,7 +14,13 @@ import java.util.Map;
 public class Global extends GlobalSettings {
 
     public void onStart( Application app ) {
+        Logger.info( "Application has started." );
         InitialData.insert( app );
+        Logger.info( "Initial data has been inserted." );
+    }
+
+    public void onStop( Application app ) {
+        Logger.info( "Application shutdown..." );
     }
 
     static class InitialData {
