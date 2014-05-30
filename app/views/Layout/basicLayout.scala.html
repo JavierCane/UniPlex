@@ -33,28 +33,36 @@
             <div class="container">
                 <div class="cap">
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-md-4">
                             <div class="logos">
                                 <a href="http://www.upc.edu"><img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")"></a>
                                 <a href="http://www.fib.upc.edu"><img id="logofib" src="@routes.Assets.at("images/Logo_FIB.gif")"></a>
                                 <span id="titol"><a href="https://raco.fib.upc.edu/"><img id="logoraco" src="@routes.Assets.at("images/logo_raco.png")"></a></span>
                             </div>
                         </div>
-
-                        <div class="col-md-5">
-                            <div class="buscar">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-1">
+                            <div class="buscarSelector">
                                 <form action="/cercar" method="post">
                                     <select id="tipus_cerca" name="tipus">
                                         <option selected value="Cercar ofertes">Cercar ofertes </option>
                                         <option value="Estudiants">Estudiants</option>
                                         <option value="personal">Personal UPC</option>
                                     </select>
-                                    <input id="camp_cerca" name="q" type="text">
-                                    <button type="submit" ><span class="glyphicon glyphicon-search"></span></button>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="buscar">
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Cercar.." data-translatable-string="Search">
+                                    </div>
+                                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></button>
                                 </form>
                             </div>
                         </div>
-
                     </div>
 
                         <!-- hasta aqui hay el logo y el buscador con el boton desplegable -->

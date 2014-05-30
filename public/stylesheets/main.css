@@ -65,9 +65,16 @@
 .logos #titol span {font-size: 1.5em; font-weight: bold; padding-left: 0; color: #fefefe;}
 
 .cap .buscar {
-	top: 5em;
+	top: 5.4em;
 	position: absolute;
 	font-size: 0.9em;
+	margin-left:2px;
+}
+.cap .buscarSelector {
+	top: 6em;
+	position: absolute;
+	font-size: 0.9em;
+
 }
 .nav-tabs.nav-justified {
 	width:80%;
@@ -103,9 +110,30 @@ a.list-group-item {
 	left:40em;
 	top:1em;
 }
+#titolOferta{
+	color: blue;
+}
 
 #titolOferta:hover {
-	color: blue; 
 	text-decoration: underline;
-	font-size:20px;
+}
+
+.navbar-form .form-control{
+	width:130px;
+	height:25px;
+}
+
+.btn-default{
+	padding:2px 8px;
+}
+
+#tipus_cerca {
+	padding:3px 2px;
+
+}
+
+#logodetalle{
+	position:absolute;
+	top:2em;
+	right:0.5em;
 }

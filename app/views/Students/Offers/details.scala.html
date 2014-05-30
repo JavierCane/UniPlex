@@ -35,7 +35,12 @@
                         <div class="panel-heading"> <h4>Ofertes de treball | Uniplex</h4></div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-8">
+                            	<div class="col-md-1">
+                            		<div id="logodetalle">
+                            			<img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
+                            		</div>	
+                            	</div>
+                                <div class="col-md-7">
                                     <dl>
                                         <dt><h3>@oferta.getTitol()</h3></dt>
                                         <dd>@oferta.getEmpresa().getNom()</dd>
@@ -55,8 +60,8 @@
                                         <dd><strong>
                                             Persona de contacte: </strong>@oferta.getNomPersonaContacte()</dd><br>
                                         <dd><strong>Email: </strong>@oferta.getEmailPersonaContacte</dd><br>
-                                        <dd><strong>Data de caducitat: </strong>@oferta.getDataCaducitat</dd>
-
+                                        <dd><strong>Data de creació: </strong>@oferta.getDataInsercio().format("dd/MM/yyyy")</dd><br>
+                                        <dd><strong>Data de caducitat: </strong>@oferta.getDataCaducitat().format("dd/MM/yyyy")</dd>
                                         <dt><strong class="text-danger"><h3>Coneixements requerits:</strong></h3></dt>
                                         
 

@@ -16,7 +16,7 @@
                         <li><a href="#">Candidatures</a></li>
                         <li><a href="#">Gestionar convenis</a></li>
                         <li><a href="#">Gestionar alertes</a></li>
-                        <li><a href="#">Incidencia</a></li>
+                        <li><a href="#">Notificar incidencia</a></li>
                     </ul>
                 </div>
 
@@ -79,22 +79,19 @@
                                     <div class="row">
                                         <div id="header">
                                             <div class="parrafOrdenar">
-                                                <div class="col-md-8">
+                                                <div class="col-md-5">
                                                     <p>
                                                         <strong>1</strong> a <strong>5</strong> del <strong>"total"</strong>
                                                         de ofertes
                                                     </p>
                                                 </div>
 
-                                                <div class="col-md-2 col-md-offset-1">
-                                                    <form action="/ordena" method="post">
-                                                        <select id="tipus_ordena" name="ordena">
-                                                            <option selected value="Ordenar per">Ordenar per </option>
-                                                            <option value="Afinitat">Afinitat</option>
-                                                            <option value="Popularitat">Popularitat</option>
-                                                            <option value="Noves ofertes">Noves ofertes</option>
-                                                        </select>
-                                                    </form>
+                                                <div class="col-md-6 col-md-offset-1">
+                                                    <p>Ordenar per: 
+                                                        <a href="#">Afinitat</a> | 
+                                                        <a href="#">Popularitat</a> |
+                                                        <a href="#">Noves ofertes</a>
+                                                    </p> 
                                                 </div>
                                             </div>
                                         </div>
@@ -123,6 +120,7 @@
                                                         
                                                     <div class="logoEmpresa">
                                                         <img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
+                                                        
                                                     </div>
                                                 </a>
                                             }
