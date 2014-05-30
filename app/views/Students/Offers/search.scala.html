@@ -106,15 +106,12 @@
 
                                             @for(oferta <- ofertes) {
                                                 <a href="@controllers.students.offers.routes.Details.viewOfferDetails( URLEncoder.encode( oferta.getEmpresa.getNom, "UTF-8" ), URLEncoder.encode( oferta.getTitol, "UTF-8" ), oferta.getId )" class="list-group-item ">
-                                                    @*TODO: Tendíamos que cambiar esto ya que aquí no estamos tratando con una lista de tipo dl. Aquí estamos tratando directamente con los valores.*@
-                                                <dl>
-                                                    <dt>
-                                                        <h5>
-                                                            <strong>@oferta.getTitol()</strong>
-                                                        </h5>
-                                                    </dt>
-                                                    <dd>@oferta.getEmpresa().getNom()</dd>
-                                                    @*TODO: Aquí habría que meter cada uno de los parámetros de la oferta siguiendo el patrón de los parámetros anteriores*@
+                                                    <h5>
+                                                        <div id="titolOferta"><strong>@oferta.getTitol()</strong></div>
+                                                    </h5>
+                                                  
+                                                    <strong>@oferta.getEmpresa().getNom()</strong>
+                                                 
                                                     <p>
                                                         @if(oferta.getInformacioOferta().length() > 128) {
                                                             @oferta.getInformacioOferta().substring(0, 128) ...
@@ -122,10 +119,11 @@
                                                             @oferta.getInformacioOferta()
                                                         }
                                                     </p>
-                                                </dl>
-                                                <div class="logoEmpresa">
-                                                    <img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
-                                                </div>
+                                                    <p>Jornada @oferta.getJornadaLaboral()</p>
+                                                        
+                                                    <div class="logoEmpresa">
+                                                        <img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")">
+                                                    </div>
                                                 </a>
                                             }
                                             </div>

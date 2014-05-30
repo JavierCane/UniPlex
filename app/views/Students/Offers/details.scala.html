@@ -25,7 +25,7 @@
                             <ol class="breadcrumb">
                                 <li><a href="#">Comunitat</a></li>
                                 <li><a href="#">Borsa de treball</a></li>
-                                <li class="active">Ofertes de treball</li>
+                                <li><a href="#">Ofertes de treball</a></li>
                                 <li class="active">@oferta.getTitol()</li>
                             </ol>
                         </div>
@@ -58,10 +58,10 @@
                                         <dd><strong>Data de caducitat: </strong>@oferta.getDataCaducitat</dd>
 
                                         <dt><strong class="text-danger"><h3>Coneixements requerits:</strong></h3></dt>
-                                        <ul class="list-group">
+                                        
 
                                         @for(coneixement <- oferta.getConeixementList) {
-                                            <li>@coneixement.getNom</li>
+                                            <strong>@coneixement.getNom</strong><br>
                                         }
                                         </ul>
                                     </dl>
