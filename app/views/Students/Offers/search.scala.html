@@ -1,7 +1,7 @@
-@(ofertes: List[Oferta], cerca: String)
+@(ofertes: List[Oferta], cerca: String, tipusOferta: String, jornadaLaboral: String, destinataris: String)
 @import java.net.URLEncoder
 
-@Layout.basicLayout( "Cerca d'ofertes de feina", cerca ) {
+@Layout.basicLayout( "Cerca d'ofertes de feina", cerca, tipusOferta, jornadaLaboral, destinataris ) {
     <div class="container">
         <div id="header">
             <div class="row">
@@ -38,38 +38,59 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div id="search_sidebar" class="col-md-3">
+                                    <h4>Filtres:</h4>
                                     <ul class="list-unstyled">
                                         <li class="nav-header">
                                             <a href="#" data-toggle="collapse" data-target="#valoresFiltroTipoOferta">
                                                 <h5>
-                                                    <i class="glyphicon glyphicon-euro"></i>Tipus d'oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                                    <i class="glyphicon glyphicon-euro"></i> Tipus d'oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i>
                                                 </h5>
                                             </a>
                                             <ul class="list-unstyled collapse in" id="valoresFiltroTipoOferta">
-                                                <li class="active"> <a href="#">Indiferent <span class="badge badge-info">15</span></a></li>
-                                                <li><a href="#">Conveni de pràctiques <span class="badge badge-info">10</span></a></li>
-                                                <li><a href="#">Contracte laboral <span class="badge badge-info">5</span></a></li>
+                                                <li @if( tipusOferta.equals( "Indiferent" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index( "Indiferent", jornadaLaboral, destinataris )">Indiferent <span class="badge badge-info">15</span></a>
+                                                </li>
+                                                <li @if( tipusOferta.equals( "OfertaDeConveni" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaDeConveni", jornadaLaboral, destinataris )">Conveni de pràctiques <span class="badge badge-info">10</span></a>
+                                                </li>
+                                                <li @if( tipusOferta.equals( "OfertaLaboral" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaLaboral", jornadaLaboral, destinataris )">Contracte laboral <span class="badge badge-info">5</span></a>
+                                                </li>
                                             </ul>
                                             <a href="#" data-toggle="collapse" data-target="#valoresFiltroJornadaLaboral">
                                                 <h5>
-                                                    <i class="glyphicon glyphicon-time"></i>Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                                    <i class="glyphicon glyphicon-time"></i> Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i>
                                                 </h5>
                                             </a>
                                             <ul class="list-unstyled collapse in" id="valoresFiltroJornadaLaboral">
-                                                <li class="active"> <a href="#">Indiferent <span class="badge badge-info">15</span></a></li>
-                                                <li><a href="#">Completa <span class="badge badge-info">10</span></a></li>
-                                                <li><a href="#">Media <span class="badge badge-info">5</span></a></li>
+                                                <li @if( jornadaLaboral.equals( "Indiferent" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Indiferent", destinataris)">Indiferent <span class="badge badge-info">15</span></a>
+                                                </li>
+                                                <li @if( jornadaLaboral.equals( "Completa" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Completa", destinataris)">Completa <span class="badge badge-info">10</span></a>
+                                                </li>
+                                                <li @if( jornadaLaboral.equals( "Mitja" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Mitja", destinataris)">Mitja <span class="badge badge-info">5</span></a>
+                                                </li>
                                             </ul>
                                             <a href="#" data-toggle="collapse" data-target="#valoresFiltroDestinataris">
                                                 <h5>
-                                                    <i class="glyphicon glyphicon-user"></i>Destinataris <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                                    <i class="glyphicon glyphicon-user"></i> Destinataris <i class="glyphicon glyphicon-chevron-down replace-class"></i>
                                                 </h5>
                                             </a>
                                             <ul class="list-unstyled collapse in" id="valoresFiltroDestinataris">
-                                                <li class="active"> <a href="#">Indiferent <span class="badge badge-info">30</span></a></li>
-                                                <li><a href="#">Estudiants <span class="badge badge-info">15</span></a></li>
-                                                <li><a href="#">Acabats de titular <span class="badge badge-info">10</span></a></li>
-                                                <li><a href="#">Titulats amb experiència <span class="badge badge-info">5</span></a></li>
+                                                <li @if( destinataris.equals( "Indiferent" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Indiferent" )">Indiferent <span class="badge badge-info">30</span></a>
+                                                </li>
+                                                <li @if( destinataris.equals( "Estudiants" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Estudiants" )">Estudiants <span class="badge badge-info">15</span></a>
+                                                </li>
+                                                <li @if( destinataris.equals( "AcabatsDeTitular" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "AcabatsDeTitular" )">Acabats de titular <span class="badge badge-info">10</span></a>
+                                                </li>
+                                                <li @if( destinataris.equals( "TitulatsAmbExperiencia" ) ) { class="active" }>
+                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "TitulatsAmbExperiencia" )">Titulats amb experiència <span class="badge badge-info">5</span></a>
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>

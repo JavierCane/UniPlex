@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET        /                                                  controllers.students.offers.Search.index
+GET        /                                                  controllers.students.offers.Search.index( tipusOferta: String ?= "Indiferent", jornadaLaboral: String ?= "Indiferent", destinataris: String ?= "Indiferent" )
 
 # Offer details page
 GET        /offer/:companyUrlize/:offerUrlize/:offerId        controllers.students.offers.Details.viewOfferDetails(companyUrlize: String, offerUrlize: String, offerId: Integer)

@@ -137,3 +137,15 @@ a.list-group-item {
 	top:2em;
 	right:0.5em;
 }
+
+#search_sidebar {
+    margin-top: 50px;
+}
+
+.list-unstyled li > ul > li.active {
+    font-weight: bold;
+}
+
+.list-unstyled li > ul > li.active > a::before {
+    content:"· ";
+}

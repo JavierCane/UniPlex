@@ -11,7 +11,7 @@ create table coneixement (
 ;
 
 create table oferta (
-  tipus                     varchar(31) not null,
+  tipus_oferta              varchar(31) not null,
   id                        integer auto_increment not null,
   titol                     varchar(255) not null,
   informacio_oferta         longtext not null,
