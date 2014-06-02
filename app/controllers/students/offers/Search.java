@@ -75,7 +75,11 @@ public class Search extends Controller {
         // Construct the Ebean query making an OR of the search terms and an AND of the specifiedfilters
         Query<Oferta> query = Ebean.createQuery( Oferta.class );
 
-        String sqlSentence= StringUtils.join( searchSqlSentences, " OR " );
+        String sqlSentence = "";
+        if ( isAnySearchSet ) {
+            sqlSentence = "(" + StringUtils.join( searchSqlSentences, " OR " ) + ")";
+        }
+
         if ( isAnyFilterSet ) {
             if ( isAnySearchSet ) {
                 sqlSentence += " AND ";
@@ -93,7 +97,6 @@ public class Search extends Controller {
         }
 
         // Set filters SQL values
-        i = 1;
         for ( Object param : filtersSqlValues ) {
             query.setParameter( i, param );
             i++;

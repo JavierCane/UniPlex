@@ -44,7 +44,10 @@
                         <div class="col-md-5">
                             <div class="row">
                                 <div class="buscarSelector">
-                                    @helper.form( action = controllers.students.offers.routes.Search.index( tipusOferta, jornadaLaboral, destinataris )) {
+                                    @helper.form( action = controllers.students.offers.routes.Search.index()) {
+                                        <input type="hidden" name="tipusOferta" value="@tipusOferta">
+                                        <input type="hidden" name="jornadaLaboral" value="@jornadaLaboral">
+                                        <input type="hidden" name="destinataris" value="@destinataris">
                                         <div class="col-md-5">
                                             <select id="tipus_cerca" name="cercar">
                                                 <option selected value="ofertes-de-treball">Ofertes de treball</option>
