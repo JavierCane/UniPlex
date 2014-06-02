@@ -60,7 +60,7 @@ Empresa:
         expiracioBlocatge:  null
         motiuBlocatge:      null
         cif:                12345678A
-        logo:               oracle-logo.png
+        logo:               oracle.png
         telefon:            931234567
 
     - !!models.Empresa      &e_google
@@ -74,21 +74,7 @@ Empresa:
         expiracioBlocatge:  null
         motiuBlocatge:      null
         cif:                22345678A
-        logo:               google-logo.png
-        telefon:            931234567
-
-    - !!models.Empresa      &e_uniplex
-        nom:                UniPlex
-        user:               uniplex
-        password:           uniplexMola
-        email:              info@uniplex.com
-        esAdministrador:    false
-        esBlocat:           false
-        esDeganal:          false
-        expiracioBlocatge:  null
-        motiuBlocatge:      null
-        cif:                32345678A
-        logo:               uniplex-logo.png
+        logo:               google.png
         telefon:            931234567
 
     - !!models.Empresa      &e_fib
@@ -102,7 +88,7 @@ Empresa:
         expiracioBlocatge:  null
         motiuBlocatge:      null
         cif:                42345678A
-        logo:               fib-logo.png
+        logo:               fib.jpg
         telefon:            931234567
 
     - !!models.Empresa      &e_ub
@@ -116,7 +102,7 @@ Empresa:
         expiracioBlocatge:  null
         motiuBlocatge:      null
         cif:                52345678A
-        logo:               ub-logo.png
+        logo:               ub.png
         telefon:            931234567
 
 ###########################################################################
@@ -136,6 +122,18 @@ OfertaDeConveni:
         emailPersonaContacte: larry.ellison@oracle.com
         coneixementList:      [*c_sql, *c_oracle]
         empresa:              *e_oracle
+
+    - !!models.OfertaDeConveni
+        titol:                InLab Internship
+        informacioOferta:     Prácticas en el InLab de la FIB!
+        jornadaLaboral:       MITJA
+        destinatari:          ESTUDIANTS
+        dataInsercio:         '2014-06-02T17:48:00'
+        dataCaducitat:        2014-08-30
+        nomPersonaContacte:   Rosa Anglès
+        emailPersonaContacte: informacio@fib.upc.edu
+        coneixementList:      [*c_java, *c_scala, *c_html, *c_css, *c_jquery, *c_neo4j]
+        empresa:              *e_fib
 
 OfertaLaboral:
 

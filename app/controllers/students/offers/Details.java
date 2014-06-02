@@ -11,9 +11,11 @@ import java.net.URLEncoder;
 public class Details extends Controller {
 
     public static Result viewOfferDetails( String companyUrlize, String offerUrlize, Integer offerId ) {
-        Oferta oferta = Oferta.find.byId( 1 );
+        Oferta oferta = Oferta.find.byId( offerId );
 
-        // TODO: 404 si el ID no existe
+        if ( oferta == null ) {
+            return notFound( "Oferta " + offerId + " no encontrada." );
+        }
 
         String realCompanyUrlize = oferta.getEmpresa().getNom();
         try {
