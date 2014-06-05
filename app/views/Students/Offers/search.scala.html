@@ -2,186 +2,158 @@
 @import java.net.URLEncoder
 
 @Layout.basicLayout( "Cerca d'ofertes de feina", cerca, tipusOferta, jornadaLaboral, destinataris ) {
-    <div class="container">
-        <div id="header">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">Comunitat</a></li>
+                <li class="active"><a href="#">Borsa de treball</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>Ofertes de treball | UniPlex</h4>
+        </div>
+        <div class="panel-body">
             <div class="row">
-                <div class="col-md-2">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">WebMail</a></li>
-                        <li><a href="#">Fórums públics</a></li>
-                        <li><a href="#">Buscar conectats</a></li>
-                        <li><a href="#">Cercar estudiants</a></li>
-                        <li class="active"><a href="#">Borsa de treball</a></li>
-                        <li><a href="#">Perfil</a></li>
-                        <li><a href="#">Candidatures</a></li>
-                        <li><a href="#">Gestionar convenis</a></li>
-                        <li><a href="#">Gestionar alertes</a></li>
-                        <li><a href="#">Notificar incidencia</a></li>
+                <div id="search_filters" class="col-md-3">
+                    <h4>Filtres:</h4>
+                    <ul class="list-unstyled">
+                        <li class="nav-header">
+                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroTipoOferta">
+                                <h5>
+                                    <i class="glyphicon glyphicon-euro"></i> Tipus d'oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                </h5>
+                            </a>
+                            <ul class="list-unstyled collapse in" id="valoresFiltroTipoOferta">
+                                <li @if( tipusOferta.equals( "Indiferent" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index( "Indiferent", jornadaLaboral, destinataris )">Indiferent <span class="badge badge-info">15</span></a>
+                                </li>
+                                <li @if( tipusOferta.equals( "OfertaDeConveni" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaDeConveni", jornadaLaboral, destinataris )">Conveni de pràctiques <span class="badge badge-info">10</span></a>
+                                </li>
+                                <li @if( tipusOferta.equals( "OfertaLaboral" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaLaboral", jornadaLaboral, destinataris )">Contracte laboral <span class="badge badge-info">5</span></a>
+                                </li>
+                            </ul>
+                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroJornadaLaboral">
+                                <h5>
+                                    <i class="glyphicon glyphicon-time"></i> Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                </h5>
+                            </a>
+                            <ul class="list-unstyled collapse in" id="valoresFiltroJornadaLaboral">
+                                <li @if( jornadaLaboral.equals( "Indiferent" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Indiferent", destinataris)">Indiferent <span class="badge badge-info">15</span></a>
+                                </li>
+                                <li @if( jornadaLaboral.equals( "Completa" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Completa", destinataris)">Completa <span class="badge badge-info">10</span></a>
+                                </li>
+                                <li @if( jornadaLaboral.equals( "Mitja" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Mitja", destinataris)">Mitja <span class="badge badge-info">5</span></a>
+                                </li>
+                            </ul>
+                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroDestinataris">
+                                <h5>
+                                    <i class="glyphicon glyphicon-user"></i> Destinataris <i class="glyphicon glyphicon-chevron-down replace-class"></i>
+                                </h5>
+                            </a>
+                            <ul class="list-unstyled collapse in" id="valoresFiltroDestinataris">
+                                <li @if( destinataris.equals( "Indiferent" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Indiferent" )">Indiferent <span class="badge badge-info">30</span></a>
+                                </li>
+                                <li @if( destinataris.equals( "Estudiants" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Estudiants" )">Estudiants <span class="badge badge-info">15</span></a>
+                                </li>
+                                <li @if( destinataris.equals( "AcabatsDeTitular" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "AcabatsDeTitular" )">Acabats de titular <span class="badge badge-info">10</span></a>
+                                </li>
+                                <li @if( destinataris.equals( "TitulatsAmbExperiencia" ) ) { class="active" }>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "TitulatsAmbExperiencia" )">Titulats amb experiència <span class="badge badge-info">5</span></a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
-
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <div class="row">
-                        <div class="col-md-12">
-                            <ol class="breadcrumb">
-                                <li><a href="#">Comunitat</a></li>
-                                <li><a href="#">Borsa de treball</a></li>
-                                <li class="active">Ofertes de treball</li>
-                            </ol>
+                        <div class="col-md-9">
+                            <h4>
+                                @ofertes.size() Ofertes trobades
+                                @if( cerca != null ) {
+                                     cercant per: "@cerca".
+                                }
+                            </h4>
+                        </div>
+                        <div class="col-md-3">
+                            <a class="btn btn-success" href="#" role="button" data-toggle="tooltip" title="No implementat al prototipus!">Crear alerta</a>
                         </div>
                     </div>
 
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h4>Ofertes de treball | UniPlex</h4>
+                    <div id="results_order" class="row">
+                        <div class="col-md-5">
+                            <p>
+                                @if( ofertes.size() > 0 ) {
+                                    Llistant de l'oferta 1 a la @ofertes.size() d'un total de @ofertes.size()
+                                }
+                            </p>
                         </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div id="search_sidebar" class="col-md-3">
-                                    <h4>Filtres:</h4>
-                                    <ul class="list-unstyled">
-                                        <li class="nav-header">
-                                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroTipoOferta">
-                                                <h5>
-                                                    <i class="glyphicon glyphicon-euro"></i> Tipus d'oferta <i class="glyphicon glyphicon-chevron-down replace-class"></i>
-                                                </h5>
+
+                        <div class="col-md-6 col-md-offset-1">
+                            <p>Ordenar per:
+                                <a href="#" data-toggle="tooltip" title="No implementat al prototipus!">Afinitat</a> |
+                                <a href="#" data-toggle="tooltip" title="No implementat al prototipus!">Popularitat</a> |
+                                <a href="#" data-toggle="tooltip" title="No implementat al prototipus!">Noves ofertes</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul id="search_results" class="list-group">
+                        @for(oferta <- ofertes) {
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-9 col-sm-10 col-xs-7">
+                                        <h5>
+                                            <a id="offer_link" href="@controllers.students.offers.routes.Details.viewOfferDetails( URLEncoder.encode( oferta.getEmpresa.getNom, "UTF-8" ), URLEncoder.encode( oferta.getTitol, "UTF-8" ), oferta.getId )">
+                                            @oferta.getTitol()
                                             </a>
-                                            <ul class="list-unstyled collapse in" id="valoresFiltroTipoOferta">
-                                                <li @if( tipusOferta.equals( "Indiferent" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index( "Indiferent", jornadaLaboral, destinataris )">Indiferent <span class="badge badge-info">15</span></a>
-                                                </li>
-                                                <li @if( tipusOferta.equals( "OfertaDeConveni" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaDeConveni", jornadaLaboral, destinataris )">Conveni de pràctiques <span class="badge badge-info">10</span></a>
-                                                </li>
-                                                <li @if( tipusOferta.equals( "OfertaLaboral" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaLaboral", jornadaLaboral, destinataris )">Contracte laboral <span class="badge badge-info">5</span></a>
-                                                </li>
-                                            </ul>
-                                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroJornadaLaboral">
-                                                <h5>
-                                                    <i class="glyphicon glyphicon-time"></i> Jornada Laboral <i class="glyphicon glyphicon-chevron-down replace-class"></i>
-                                                </h5>
-                                            </a>
-                                            <ul class="list-unstyled collapse in" id="valoresFiltroJornadaLaboral">
-                                                <li @if( jornadaLaboral.equals( "Indiferent" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Indiferent", destinataris)">Indiferent <span class="badge badge-info">15</span></a>
-                                                </li>
-                                                <li @if( jornadaLaboral.equals( "Completa" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Completa", destinataris)">Completa <span class="badge badge-info">10</span></a>
-                                                </li>
-                                                <li @if( jornadaLaboral.equals( "Mitja" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Mitja", destinataris)">Mitja <span class="badge badge-info">5</span></a>
-                                                </li>
-                                            </ul>
-                                            <a href="#" data-toggle="collapse" data-target="#valoresFiltroDestinataris">
-                                                <h5>
-                                                    <i class="glyphicon glyphicon-user"></i> Destinataris <i class="glyphicon glyphicon-chevron-down replace-class"></i>
-                                                </h5>
-                                            </a>
-                                            <ul class="list-unstyled collapse in" id="valoresFiltroDestinataris">
-                                                <li @if( destinataris.equals( "Indiferent" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Indiferent" )">Indiferent <span class="badge badge-info">30</span></a>
-                                                </li>
-                                                <li @if( destinataris.equals( "Estudiants" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Estudiants" )">Estudiants <span class="badge badge-info">15</span></a>
-                                                </li>
-                                                <li @if( destinataris.equals( "AcabatsDeTitular" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "AcabatsDeTitular" )">Acabats de titular <span class="badge badge-info">10</span></a>
-                                                </li>
-                                                <li @if( destinataris.equals( "TitulatsAmbExperiencia" ) ) { class="active" }>
-                                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "TitulatsAmbExperiencia" )">Titulats amb experiència <span class="badge badge-info">5</span></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                        </h5>
+
+                                        <strong>@oferta.getEmpresa().getNom()</strong>
+                                    </div>
+                                    <div class="col-md-3 col-sm-2 col-xs-5">
+                                        <img class="img-thumbnail" alt="Logo @oferta.getEmpresa.getNom" src="@routes.Assets.at("images/empresa/" + oferta.getEmpresa.getLogo)">
+                                    </div>
                                 </div>
 
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-9">
-                                            <h4>
-                                                @ofertes.size() Ofertes trobades
-                                                @if( cerca != null ) {
-                                                     cercant per: "@cerca".
-                                                }
-                                            </h4>
-                                        </div>
-                                        <div class="col-md-2 ">
-                                            <a class="btn btn-lg btn-success" href="#" role="button">Crear alerta</a>
-                                        </div>
-                                    </div>
+                                <p>
+                                    @if(oferta.getInformacioOferta().length() > 128) {
+                                        @oferta.getInformacioOferta().substring(0, 128) ...
+                                    } else {
+                                        @oferta.getInformacioOferta()
+                                    }
+                                </p>
+                                <p>Jornada @oferta.getJornadaLaboral()</p>
+                            </li>
+                        }
+                    </ul>
 
-                                    <div class="row">
-                                        <div id="header">
-                                            <div class="parrafOrdenar">
-                                                <div class="col-md-5">
-                                                    <p>
-                                                        <strong>1</strong> a <strong>5</strong> del <strong>"total"</strong> de ofertes
-                                                    </p>
-                                                </div>
-
-                                                <div class="col-md-6 col-md-offset-1">
-                                                    <p>Ordenar per: 
-                                                        <a href="#">Afinitat</a> | 
-                                                        <a href="#">Popularitat</a> |
-                                                        <a href="#">Noves ofertes</a>
-                                                    </p> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-11">
-                                            <div class="list-group">
-
-                                            @for(oferta <- ofertes) {
-                                                <a href="@controllers.students.offers.routes.Details.viewOfferDetails( URLEncoder.encode( oferta.getEmpresa.getNom, "UTF-8" ), URLEncoder.encode( oferta.getTitol, "UTF-8" ), oferta.getId )" class="list-group-item ">
-                                                    <h5>
-                                                        <div id="titolOferta"><strong>@oferta.getTitol()</strong></div>
-                                                    </h5>
-                                                  
-                                                    <strong>@oferta.getEmpresa().getNom()</strong>
-                                                 
-                                                    <p>
-                                                        @if(oferta.getInformacioOferta().length() > 128) {
-                                                            @oferta.getInformacioOferta().substring(0, 128) ...
-                                                        } else {
-                                                            @oferta.getInformacioOferta()
-                                                        }
-                                                    </p>
-                                                    <p>Jornada @oferta.getJornadaLaboral()</p>
-                                                        
-                                                    <div class="logoEmpresa">
-                                                        <img id="logoupc" src="@routes.Assets.at("images/empresa/" + oferta.getEmpresa.getLogo)">
-                                                        
-                                                    </div>
-                                                </a>
-                                            }
-                                            </div>
-                                        </div>    <!-- aqui es el final de la lista de ofertes tancat amb un col-md-11 -->
-                                    </div> <!-- tanco la row que conte la col-11 de la lista d ofertes-->
-
-                                    <div class="row"> <!-- una row nova per la paginacacio esta dintre del panel body-->
-                                        <div class="col-md-3"></div>
-                                        <div class="col-md-5">
-                                            <ul class="pagination">
-                                                <li><a href="#">&laquo;</a></li>
-                                                <li class="active"><a href="#">1</a></li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                                <li><a href="#">4</a></li>
-                                                <li><a href="#">5</a></li>
-                                                <li><a href="#">&raquo;</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> @* END col-md-9 (Columna resultados de búsqueda) *@
-                            </div> @* END row *@
-                        </div> @* END panel-body *@
-                    </div> @* END panel panel-primary *@
-                </div>
-            </div> @* END row (contenido) *@
-        </div> @* END roheader *@
-    </div> @* END rocontainer *@
+                    @*<div class="row"> <!-- una row nova per la paginacacio esta dintre del panel body-->*@
+                        @*<div class="col-md-3"></div>*@
+                        @*<div class="col-md-5">*@
+                            @*<ul class="pagination">*@
+                                @*<li><a href="#">&laquo;</a></li>*@
+                                @*<li class="active"><a href="#">1</a></li>*@
+                                @*<li><a href="#">2</a></li>*@
+                                @*<li><a href="#">3</a></li>*@
+                                @*<li><a href="#">4</a></li>*@
+                                @*<li><a href="#">5</a></li>*@
+                                @*<li><a href="#">&raquo;</a></li>*@
+                            @*</ul>*@
+                        @*</div>*@
+                    @*</div>*@
+                </div> @* END col-md-9 (Columna resultados de búsqueda) *@
+            </div> @* END row *@
+        </div> @* END panel-body *@
+    </div> @* END panel panel-primary *@
 }

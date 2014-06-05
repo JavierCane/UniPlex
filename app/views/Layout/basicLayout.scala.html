@@ -29,74 +29,73 @@
         <![endif]-->
     </head>
     <body>
-        <div id="page">
-            <div class="container">
-                <div class="cap">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="logos">
-                                <a href="http://www.upc.edu"><img id="logoupc" src="@routes.Assets.at("images/Logo_UPC.gif")"></a>
-                                <a href="http://www.fib.upc.edu"><img id="logofib" src="@routes.Assets.at("images/Logo_FIB.gif")"></a>
-                                <span id="titol"><a href="https://raco.fib.upc.edu/"><img id="logoraco" src="@routes.Assets.at("images/logo_raco.png")"></a></span>
-                            </div>
-                        </div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-5">
-                            <div class="row">
-                                <div class="buscarSelector">
-                                    @helper.form( action = controllers.students.offers.routes.Search.index()) {
-                                        <input type="hidden" name="tipusOferta" value="@tipusOferta">
-                                        <input type="hidden" name="jornadaLaboral" value="@jornadaLaboral">
-                                        <input type="hidden" name="destinataris" value="@destinataris">
-                                        <div class="col-md-5">
-                                            <select id="tipus_cerca" name="cercar">
-                                                <option selected value="ofertes-de-treball">Ofertes de treball</option>
-                                                <option value="estudiants">Estudiants</option>
-                                                <option value="personal-upc">Personal UPC</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Cerca" name="cerca"
-                                                    @if( cerca != null ) {
-                                                        value="@cerca">
-                                                        } else {
-                                                        >
-                                                    }
-                                                <span class="input-group-btn">
-                                                    <button type="submit" class="btn btn-default" style="padding: 6px 15px">
-                                                        <span class="glyphicon glyphicon-search"></span>
-                                                    </button>
-                                                </span>
-                                            </div><!-- /input-group -->
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        </div>
+        <div class="container">
+            <div id="header_container" class="row">
+                <div id="header" class="row">
+                    <div class="col-md-7 pull-left">
+                        <a href="http://www.upc.edu"><img src="@routes.Assets.at("images/Logo_UPC.gif")"></a>
+                        <a href="http://www.fib.upc.edu"><img src="@routes.Assets.at("images/Logo_FIB.gif")"></a>
+                        <span id="titol"><a href="https://raco.fib.upc.edu/"><img id="logoraco" src="@routes.Assets.at("images/logo_raco.png")"></a></span>
                     </div>
-
-                        <!-- hasta aqui hay el logo y el buscador con el boton desplegable -->
-
-                    <div class="container">
-                        <div class="pestanyes">
-                            <div class="row">
-                                <ul class="nav nav-tabs nav-justified">
-                                    <li ><a href="#"><h4><span class="glyphicon glyphicon-home" style="font-size:16px"></h4></a></li>
-                                    <li><a href="#"><h4>Asignatures</h4></a></li>
-                                    <li><a href="#"><h4>Grups</h4></a></li>
-                                    <li><a href="#"><h4>Gestio</h4></a></li>
-                                    <li class="active"><a href="#" style="background:#fff"><h4>Comunitat</h4></a></li>
-                                    <li><a href="#"><h4>Projectes</h4></a></li>
-                                    <li><a href="#"><h4>Serveis</h4></a></li>
-                                </ul>
+                    <div id="search_form_container" class="col-md-5">
+                        @helper.form( action = controllers.students.offers.routes.Search.index(), 'class -> "form-inline", 'role -> "form") {
+                            <input type="hidden" name="tipusOferta" value="@tipusOferta">
+                            <input type="hidden" name="jornadaLaboral" value="@jornadaLaboral">
+                            <input type="hidden" name="destinataris" value="@destinataris">
+                            <div class="form-group">
+                                <label class="sr-only" for="tipus_cerca">Tipus de cerca</label>
+                                <select id="tipus_cerca" name="cercar" class="form-control input-sm">
+                                    <option selected value="ofertes-de-treball">Ofertes de treball</option>
+                                    <option value="estudiants">Estudiants</option>
+                                    <option value="personal-upc">Personal UPC</option>
+                                </select>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="cerca">Cerca</label>
+                                <input type="text" id="cerca" class="form-control input-sm" placeholder="Cerca" name="cerca"
+                                    @if( cerca != null ) {
+                                        value="@cerca">
+                                    } else {
+                                        >
+                                    }
+                            </div>
+                            <button type="submit" class="btn btn-default input-sm">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        }
                     </div>
                 </div>
             </div>
-
-            @content
+            <div id="main-menu" class="row">
+                <ul class="nav nav-tabs nav-justified">
+                    <li><a href="#"><span class="glyphicon glyphicon-home" style="font-size:16px"></span></a></li>
+                    <li><a href="#">Asignatures</a></li>
+                    <li><a href="#">Grups</a></li>
+                    <li><a href="#">Gestio</a></li>
+                    <li class="active"><a href="#">Comunitat</a></li>
+                    <li><a href="#">Projectes</a></li>
+                    <li><a href="#">Serveis</a></li>
+                </ul>
+            </div>
+            <div id="main-content" class="row">
+                <div class="col-md-2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">WebMail</a></li>
+                        <li><a href="#">Fórums públics</a></li>
+                        <li><a href="#">Buscar conectats</a></li>
+                        <li><a href="#">Cercar estudiants</a></li>
+                        <li class="active"><a href="#">Borsa de treball</a></li>
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="#">Candidatures</a></li>
+                        <li><a href="#">Gestionar convenis</a></li>
+                        <li><a href="#">Gestionar alertes</a></li>
+                        <li><a href="#">Incidencia</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-10">
+                    @content
+                </div>
+            </div>
         </div>
     </body>
 </html>

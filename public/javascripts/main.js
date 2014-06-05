@@ -1,14 +1,25 @@
-/**
- * Funciones del sidebar de la búsqueda
- */
-var searchSidebar = {
+var uniPlex = {
+    commonFunctions : {
+        initTooltips : function() {
+            $('[data-toggle=tooltip]').each(function(){
+                $(this).tooltip();
+            });
+        }
+    },
 
-    init : function() {
-        /* Filtros lateral búsqueda de ofertas > Substituir icono desplegable */
-        $('[data-toggle=collapse]').click(function (event) {
-            event.preventDefault();
-            $(this).find('i.replace-class').toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
-        });
+    searchSidebar : {
+        init : function() {
+            /* Filtros lateral búsqueda de ofertas > Substituir icono desplegable */
+            $('#search_filters').find('[data-toggle=collapse]').click(function (event) {
+                event.preventDefault();
+                $(this).find('i.replace-class').toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+            });
+
+            /* Click en resultados */
+            $('#search_results').find('li').click(function() {
+                document.location = $(this).find('#offer_link').attr('href');
+            });
+        }
     }
 };
 
@@ -16,7 +27,9 @@ var searchSidebar = {
  * Cuando el documento esté disponible, lanzamos las funciones de inicialización del apartado en el que estemos.
  */
 $(document).ready( function() {
-    if ( $('#search_sidebar').length )
-        searchSidebar.init();
+    uniPlex.commonFunctions.initTooltips();
+
+    if ( $('#search_filters').length )
+        uniPlex.searchSidebar.init();
 });
 

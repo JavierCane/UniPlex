@@ -1,79 +1,58 @@
 @(title: String, headerText: String, oferta: Oferta)
 
 @Layout.basicLayout(title, null, "Indiferent", "Indiferent", "Indiferent") {
-    <div class="container">
-        <div id="header">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">Comunitat</a></li>
+                <li><a href="#">Borsa de treball</a></li>
+                <li class="active"><a href="#">@oferta.getTitol()</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>Ofertes de treball | Uniplex</h4>
+        </div>
+        <div class="panel-body">
             <div class="row">
-                <div class="col-md-2">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">WebMail</a></li>
-                        <li><a href="#">Fórums públics</a></li>
-                        <li><a href="#">Buscar conectats</a></li>
-                        <li><a href="#">Cercar estudiants</a></li>
-                        <li class="active"><a href="#">Borsa de treball</a></li>
-                        <li><a href="#">Perfil</a></li>
-                        <li><a href="#">Candidatures</a></li>
-                        <li><a href="#">Gestionar convenis</a></li>
-                        <li><a href="#">Gestionar alertes</a></li>
-                        <li><a href="#">Incidencia</a></li>
-                    </ul>
+                <div class="col-md-7 col-sm-8 col-xs-7">
+                    <h1>@oferta.getTitol()</h1>
+                    <h2>@oferta.getEmpresa().getNom()</h2>
                 </div>
-
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ol class="breadcrumb">
-                                <li><a href="#">Comunitat</a></li>
-                                <li><a href="#">Borsa de treball</a></li>
-                                <li><a href="#">Ofertes de treball</a></li>
-                                <li class="active">@oferta.getTitol()</li>
-                            </ol>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-primary">
-                        <div class="panel-heading"> <h4>Ofertes de treball | Uniplex</h4></div>
-                        <div class="panel-body">
-                            <div class="row">
-                            	<div class="col-md-1">
-                            		<div id="logodetalle">
-                            			<img id="logoupc" src="@routes.Assets.at("images/empresa/" + oferta.getEmpresa.getLogo)">
-                            		</div>	
-                            	</div>
-                                <div class="col-md-7">
-                                    <dl>
-                                        <dt><h3>@oferta.getTitol()</h3></dt>
-                                        <dd>@oferta.getEmpresa().getNom()</dd>
-                                    </dl>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <a class="btn btn-lg btn-success" href="#" role="button">Presentar candidatura</a>
-                                </div>
-
-                                <div class="col-md-10">
-                                    <dl>
-                                        <dt><strong class="text-danger"><h3>Estat de la oferta</strong></h3></dt>
-                                        <dd><strong>Informacio: </strong>@oferta.getInformacioOferta()</dd><br>
-                                        <dd><strong>JornadaLaboral: </strong>@oferta.getJornadaLaboral()</dd><br>
-                                        <dd><strong>Localitzacio: </strong>"Barcelona"</dd><br>
-                                        <dd><strong>
-                                            Persona de contacte: </strong>@oferta.getNomPersonaContacte()</dd><br>
-                                        <dd><strong>Email: </strong>@oferta.getEmailPersonaContacte</dd><br>
-                                        <dd><strong>Data de creació: </strong>@oferta.getDataInsercio().format("dd/MM/yyyy")</dd><br>
-                                        <dd><strong>Data de caducitat: </strong>@oferta.getDataCaducitat().format("dd/MM/yyyy")</dd>
-                                        <dt><strong class="text-danger"><h3>Coneixements requerits:</strong></h3></dt>
-                                        
-
-                                        @for(coneixement <- oferta.getConeixementList) {
-                                            <strong>@coneixement.getNom</strong><br>
-                                        }
-                                        </ul>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-5 col-sm-4 col-xs-5">
+                    <img class="img-thumbnail" src="@routes.Assets.at("images/empresa/" + oferta.getEmpresa.getLogo)" alt="Logo @oferta.getEmpresa.getNom">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-8 pull-right">
+                    <a href="#" data-toggle="tooltip" title="No implementat al prototipus!" class="btn btn-success" role="button">Presentar candidatura</a>
+                </div>
+            </div>
+            <div class="row">
+                <div id="offer_details" class="col-md-12">
+                    <h3>Estat de la oferta</h3>
+                    <dl>
+                        <dt>Informacio</dt>
+                        <dd>@oferta.getInformacioOferta()</dd>
+                        <dt>JornadaLaboral</dt>
+                        <dd>@oferta.getJornadaLaboral()</dd>
+                        <dt>Persona de contacte</dt>
+                        <dd>@oferta.getNomPersonaContacte()</dd>
+                        <dt>Email</dt>
+                        <dd>@oferta.getEmailPersonaContacte()</dd>
+                        <dt>Data de creació</dt>
+                        <dd>@oferta.getDataInsercio().format("dd/MM/yyyy")</dd>
+                        <dt>Data de caducitat</dt>
+                        <dd>@oferta.getDataCaducitat().format("dd/MM/yyyy")</dd>
+                    </dl>
+                    <h3>Coneixements requerits</h3>
+                    <ul>
+                        @for(coneixement <- oferta.getConeixementList) {
+                            <li>@coneixement.getNom</li>
+                        }
+                    </ul>
                 </div>
             </div>
         </div>
