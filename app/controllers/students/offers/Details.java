@@ -13,30 +13,25 @@ public class Details extends Controller {
     public static Result viewOfferDetails( String companyUrlize, String offerUrlize, Integer offerId ) {
         Oferta oferta = Oferta.find.byId( offerId );
 
-        if ( oferta == null ) {
+        if ( oferta == null )
             return notFound( "Oferta " + offerId + " no encontrada." );
-        }
 
-        String realCompanyUrlize = oferta.getEmpresa().getNom();
+        String realCompanyUrlize = normalize( oferta.getEmpresa().getNom() );
+        String realOfferUrlize = normalize( oferta.getTitol() );
+
+        if ( !companyUrlize.equals( realCompanyUrlize ) || !offerUrlize.equals( realOfferUrlize ) )
+            return movedPermanently( routes.Details.viewOfferDetails( realCompanyUrlize, realOfferUrlize, offerId ) );
+
+        return ok( details.render( offerUrlize + " a " + companyUrlize, oferta ) );
+    }
+
+    private static String normalize( String value ) {
         try {
-            realCompanyUrlize = URLEncoder.encode( realCompanyUrlize, "UTF-8" );
+            value = URLEncoder.encode( value, "UTF-8" );
         } catch ( UnsupportedEncodingException e ) {
             e.printStackTrace();
         }
 
-        String realOfferUrlize = oferta.getTitol();
-        try {
-            realOfferUrlize = URLEncoder.encode( realOfferUrlize, "UTF-8" );
-        } catch ( UnsupportedEncodingException e ) {
-            e.printStackTrace();
-        }
-
-        if ( !companyUrlize.equals( realCompanyUrlize ) || !offerUrlize.equals( realOfferUrlize ) ) {
-            return movedPermanently( controllers.students.offers.routes.Details.viewOfferDetails( realCompanyUrlize, realOfferUrlize, offerId ) );
-        }
-
-        String headerText = "Job details for offer ID: " + offerId + ", companyUrlize: " + companyUrlize + ", offerUrlize: " + offerUrlize;
-
-        return ok( details.render( offerUrlize + " a " + companyUrlize, headerText, oferta ) );
+        return value;
     }
 }
