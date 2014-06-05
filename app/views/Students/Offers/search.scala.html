@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <ol class="breadcrumb">
                 <li><a href="#">Comunitat</a></li>
-                <li class="active"><a href="#">Borsa de treball</a></li>
+                <li class="active"><a href="@controllers.students.offers.routes.Search.index()">Borsa de treball</a></li>
             </ol>
         </div>
     </div>
@@ -28,13 +28,13 @@
                             </a>
                             <ul class="list-unstyled collapse in" id="valoresFiltroTipoOferta">
                                 <li @if( tipusOferta.equals( "Indiferent" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index( "Indiferent", jornadaLaboral, destinataris )">Indiferent <span class="badge badge-info">15</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index( "Indiferent", jornadaLaboral, destinataris )">Indiferent</a>
                                 </li>
                                 <li @if( tipusOferta.equals( "OfertaDeConveni" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaDeConveni", jornadaLaboral, destinataris )">Conveni de pràctiques <span class="badge badge-info">10</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaDeConveni", jornadaLaboral, destinataris )">Conveni de pràctiques</a>
                                 </li>
                                 <li @if( tipusOferta.equals( "OfertaLaboral" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaLaboral", jornadaLaboral, destinataris )">Contracte laboral <span class="badge badge-info">5</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index( "OfertaLaboral", jornadaLaboral, destinataris )">Contracte laboral</a>
                                 </li>
                             </ul>
                             <a href="#" data-toggle="collapse" data-target="#valoresFiltroJornadaLaboral">
@@ -44,13 +44,13 @@
                             </a>
                             <ul class="list-unstyled collapse in" id="valoresFiltroJornadaLaboral">
                                 <li @if( jornadaLaboral.equals( "Indiferent" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Indiferent", destinataris)">Indiferent <span class="badge badge-info">15</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Indiferent", destinataris)">Indiferent</a>
                                 </li>
                                 <li @if( jornadaLaboral.equals( "Completa" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Completa", destinataris)">Completa <span class="badge badge-info">10</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Completa", destinataris)">Completa</a>
                                 </li>
                                 <li @if( jornadaLaboral.equals( "Mitja" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Mitja", destinataris)">Mitja <span class="badge badge-info">5</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, "Mitja", destinataris)">Mitja</a>
                                 </li>
                             </ul>
                             <a href="#" data-toggle="collapse" data-target="#valoresFiltroDestinataris">
@@ -60,16 +60,16 @@
                             </a>
                             <ul class="list-unstyled collapse in" id="valoresFiltroDestinataris">
                                 <li @if( destinataris.equals( "Indiferent" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Indiferent" )">Indiferent <span class="badge badge-info">30</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Indiferent" )">Indiferent</a>
                                 </li>
                                 <li @if( destinataris.equals( "Estudiants" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Estudiants" )">Estudiants <span class="badge badge-info">15</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "Estudiants" )">Estudiants</a>
                                 </li>
                                 <li @if( destinataris.equals( "AcabatsDeTitular" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "AcabatsDeTitular" )">Acabats de titular <span class="badge badge-info">10</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "AcabatsDeTitular" )">Acabats de titular</a>
                                 </li>
                                 <li @if( destinataris.equals( "TitulatsAmbExperiencia" ) ) { class="active" }>
-                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "TitulatsAmbExperiencia" )">Titulats amb experiència <span class="badge badge-info">5</span></a>
+                                    <a href="@controllers.students.offers.routes.Search.index(tipusOferta, jornadaLaboral, "TitulatsAmbExperiencia" )">Titulats amb experiència</a>
                                 </li>
                             </ul>
                         </li>
@@ -115,11 +115,11 @@
                                     <div class="col-md-9 col-sm-10 col-xs-7">
                                         <h5>
                                             <a id="offer_link" href="@controllers.students.offers.routes.Details.viewOfferDetails( URLEncoder.encode( oferta.getEmpresa.getNom, "UTF-8" ), URLEncoder.encode( oferta.getTitol, "UTF-8" ), oferta.getId )">
-                                            @oferta.getTitol()
+                                            @oferta.getTitol
                                             </a>
                                         </h5>
 
-                                        <strong>@oferta.getEmpresa().getNom()</strong>
+                                        <strong>@oferta.getEmpresa.getNom</strong>
                                     </div>
                                     <div class="col-md-3 col-sm-2 col-xs-5">
                                         <img class="img-thumbnail" alt="Logo @oferta.getEmpresa.getNom" src="@routes.Assets.at("images/empresa/" + oferta.getEmpresa.getLogo)">
@@ -127,13 +127,12 @@
                                 </div>
 
                                 <p>
-                                    @if(oferta.getInformacioOferta().length() > 128) {
-                                        @oferta.getInformacioOferta().substring(0, 128) ...
+                                    @if(oferta.getInformacioOferta.length() > 128) {
+                                        @oferta.getInformacioOferta.substring(0, 128)...
                                     } else {
-                                        @oferta.getInformacioOferta()
+                                        @oferta.getInformacioOferta
                                     }
                                 </p>
-                                <p>Jornada @oferta.getJornadaLaboral()</p>
                             </li>
                         }
                     </ul>

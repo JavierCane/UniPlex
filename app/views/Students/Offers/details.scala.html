@@ -1,12 +1,13 @@
 @(title: String, headerText: String, oferta: Oferta)
+@import java.net.URLEncoder
 
 @Layout.basicLayout(title, null, "Indiferent", "Indiferent", "Indiferent") {
     <div class="row">
         <div class="col-md-12">
             <ol class="breadcrumb">
                 <li><a href="#">Comunitat</a></li>
-                <li><a href="#">Borsa de treball</a></li>
-                <li class="active"><a href="#">@oferta.getTitol()</a></li>
+                <li><a href="@controllers.students.offers.routes.Search.index()">Borsa de treball</a></li>
+                <li class="active"><a href="@controllers.students.offers.routes.Details.viewOfferDetails( URLEncoder.encode( oferta.getEmpresa.getNom, "UTF-8" ), URLEncoder.encode( oferta.getTitol, "UTF-8" ), oferta.getId )">@oferta.getTitol</a></li>
             </ol>
         </div>
     </div>
@@ -18,8 +19,8 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-7 col-sm-8 col-xs-7">
-                    <h1>@oferta.getTitol()</h1>
-                    <h2>@oferta.getEmpresa().getNom()</h2>
+                    <h1>@oferta.getTitol</h1>
+                    <h2>@oferta.getEmpresa.getNom</h2>
                 </div>
                 <div class="col-md-5 col-sm-4 col-xs-5">
                     <img class="img-thumbnail" src="@routes.Assets.at("images/empresa/" + oferta.getEmpresa.getLogo)" alt="Logo @oferta.getEmpresa.getNom">
@@ -35,17 +36,17 @@
                     <h3>Estat de la oferta</h3>
                     <dl>
                         <dt>Informacio</dt>
-                        <dd>@oferta.getInformacioOferta()</dd>
+                        <dd>@oferta.getInformacioOferta</dd>
                         <dt>JornadaLaboral</dt>
-                        <dd>@oferta.getJornadaLaboral()</dd>
+                        <dd>@oferta.getJornadaLaboral</dd>
                         <dt>Persona de contacte</dt>
-                        <dd>@oferta.getNomPersonaContacte()</dd>
+                        <dd>@oferta.getNomPersonaContacte</dd>
                         <dt>Email</dt>
-                        <dd>@oferta.getEmailPersonaContacte()</dd>
+                        <dd>@oferta.getEmailPersonaContacte</dd>
                         <dt>Data de creació</dt>
-                        <dd>@oferta.getDataInsercio().format("dd/MM/yyyy")</dd>
+                        <dd>@oferta.getDataInsercio.format("dd/MM/yyyy")</dd>
                         <dt>Data de caducitat</dt>
-                        <dd>@oferta.getDataCaducitat().format("dd/MM/yyyy")</dd>
+                        <dd>@oferta.getDataCaducitat.format("dd/MM/yyyy")</dd>
                     </dl>
                     <h3>Coneixements requerits</h3>
                     <ul>
