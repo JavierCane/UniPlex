@@ -51,7 +51,7 @@ Empresa:
 
     - !!models.Empresa      &e_oracle
         nom:                Oracle
-        user:               oracle
+        userName:               oracle
         password:           oracleMola
         email:              info@oracle.com
         esAdministrador:    false
@@ -65,7 +65,7 @@ Empresa:
 
     - !!models.Empresa      &e_google
         nom:                Google
-        user:               google
+        userName:               google
         password:           googleMola
         email:              info@google.com
         esAdministrador:    false
@@ -79,7 +79,7 @@ Empresa:
 
     - !!models.Empresa      &e_fib
         nom:                FIB
-        user:               fib
+        userName:               fib
         password:           fibMola
         email:              info@fib.com
         esAdministrador:    false
@@ -93,7 +93,7 @@ Empresa:
 
     - !!models.Empresa      &e_ub
         nom:                UB
-        user:               ub
+        userName:               ub
         password:           ubMola
         email:              info@ub.com
         esAdministrador:    false

@@ -14,7 +14,7 @@ create table oferta (
   tipus_oferta              varchar(31) not null,
   id                        integer not null,
   titol                     varchar(255) not null,
-  informacio_oferta         clob not null,
+  informacio_oferta         text not null,
   jornada_laboral           varchar(10) not null,
   destinatari               varchar(22) not null,
   data_insercio             timestamp not null,
@@ -31,7 +31,7 @@ create table usuari (
   tipus                     varchar(31) not null,
   id                        integer not null,
   nom                       varchar(255) not null,
-  user                      varchar(255) not null,
+  user_name                 varchar(255) not null,
   password                  varchar(255) not null,
   email                     varchar(255) not null,
   es_administrador          boolean not null,
@@ -59,28 +59,24 @@ create sequence oferta_seq;
 
 create sequence usuari_seq;
 
-alter table oferta add constraint fk_oferta_empresa_1 foreign key (empresa_id) references usuari (id) on delete restrict on update restrict;
+alter table oferta add constraint fk_oferta_empresa_1 foreign key (empresa_id) references usuari (id);
 create index ix_oferta_empresa_1 on oferta (empresa_id);
 
 
 
-alter table oferta_conexiement add constraint fk_oferta_conexiement_oferta_01 foreign key (oferta_id) references oferta (id) on delete restrict on update restrict;
+alter table oferta_conexiement add constraint fk_oferta_conexiement_oferta_01 foreign key (oferta_id) references oferta (id);
 
-alter table oferta_conexiement add constraint fk_oferta_conexiement_coneixe_02 foreign key (conexiement_id) references coneixement (id) on delete restrict on update restrict;
+alter table oferta_conexiement add constraint fk_oferta_conexiement_coneixe_02 foreign key (conexiement_id) references coneixement (id);
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+drop table if exists coneixement cascade;
 
-drop table if exists coneixement;
+drop table if exists oferta cascade;
 
-drop table if exists oferta;
+drop table if exists oferta_conexiement cascade;
 
-drop table if exists oferta_conexiement;
-
-drop table if exists usuari;
-
-SET REFERENTIAL_INTEGRITY TRUE;
+drop table if exists usuari cascade;
 
 drop sequence if exists coneixement_seq;
 

@@ -20,7 +20,7 @@ public class Usuari extends Model {
     protected String nom;
 
     @NotNull
-    protected String user;
+    protected String userName;
 
     @NotNull
     protected String password;
@@ -45,7 +45,7 @@ public class Usuari extends Model {
     protected String motiuBlocatge;
 
     public Usuari( String nom,
-                   String user,
+                   String userName,
                    String password,
                    String email,
                    boolean esAdministrador,
@@ -54,7 +54,7 @@ public class Usuari extends Model {
                    Date expiracioBlocatge,
                    String motiuBlocatge ) {
         this.nom = nom;
-        this.user = user;
+        this.userName = userName;
         this.password = password;
         this.email = email;
         this.esAdministrador = esAdministrador;
@@ -80,12 +80,12 @@ public class Usuari extends Model {
         this.nom = nom;
     }
 
-    public String getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser( String user ) {
-        this.user = user;
+    public void setUserName( String userName ) {
+        this.userName = userName;
     }
 
     public String getPassword() {
