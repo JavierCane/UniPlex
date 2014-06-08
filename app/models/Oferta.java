@@ -182,14 +182,14 @@ public class Oferta extends Model {
     }
 
     public static List<Oferta> getOfertesList( String tipusOferta, String jornadaLaboral, String destinataris, String cerca ) {
-        List<String> searchSqlSentences = new ArrayList<>();
-        List<Object> searchSqlValues = new ArrayList<>();
+        List<String> searchSqlSentences = new ArrayList<String>();
+        List<Object> searchSqlValues = new ArrayList<Object>();
 
         // Establecer los parámetros de filtrado de la consulta SQL en cuanto a búsqueda.
         setSearchSql( cerca, searchSqlSentences, searchSqlValues );
 
-        List<String> filtersSqlSentences = new ArrayList<>();
-        List<Object> filtersSqlValues = new ArrayList<>();
+        List<String> filtersSqlSentences = new ArrayList<String>();
+        List<Object> filtersSqlValues = new ArrayList<Object>();
 
         // Establecer los parámetros de filtrado de la consulta SQL en cuanto a filtros.
         setFilterSql( tipusOferta, "tipus_oferta", filtersSqlSentences, filtersSqlValues );
