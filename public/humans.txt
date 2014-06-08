@@ -1,0 +1,14 @@
+This is a project developed as a proof of concept for a School subject.
+Source code: https://github.com/JavierCane/UniPlex/
+
+/* TEAM */
+	Backend web developer: 
+		Javier Ferrer (tt. @JavierCane)
+
+	Frontend web developer:
+		Mouraz Mizab
+
+	Enterprise Architect masters:
+		Santi Garcia
+		Pau Trepat
+		Pol Garcia
