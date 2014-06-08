@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/uniplex -Dconfig.file=conf/prodHeroku.conf -Ddb.default.url=postgres://mwyctnqtnecxax:RR9VUmfMe531ZAkdC-X5q0Xf2k@ec2-54-246-102-33.eu-west-1.compute.amazonaws.com:5432/d6sup4u3g8v7pu -Dhttp.port=${PORT}
+web: target/universal/stage/bin/uniplex -Dconfig.file=conf/prodHeroku.conf -Ddb.default.url=${DATABASE_URL} -Dhttp.port=${PORT}
