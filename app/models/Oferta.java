@@ -35,7 +35,7 @@ public class Oferta extends Model {
      * Descripción ampliada de la oferta.
      */
     @NotNull
-    @Constraints.MinLength(128)
+    @Constraints.MinLength( 128 )
     @Lob
     protected String informacioOferta;
 
@@ -46,7 +46,7 @@ public class Oferta extends Model {
 
     @NotNull
     @Constraints.Required
-    @Enumerated(EnumType.STRING)
+    @Enumerated( EnumType.STRING )
     protected Destinatari destinatari;
 
     @NotNull
@@ -64,23 +64,30 @@ public class Oferta extends Model {
     @ManyToMany
     @JoinTable(
             name = "oferta_conexiement" ,
-            joinColumns = @JoinColumn(name = "oferta_id") ,
-            inverseJoinColumns = @JoinColumn(name = "conexiement_id")
+            joinColumns = @JoinColumn( name = "oferta_id" ) ,
+            inverseJoinColumns = @JoinColumn( name = "conexiement_id" )
     )
     protected List<Coneixement> coneixementList;
 
     @ManyToOne(cascade = CascadeType.ALL , targetEntity = Empresa.class)
     protected Empresa empresa;
 
-    public static Finder<Integer, Oferta> find = new Finder(
-            Integer.class, Oferta.class
-    );
+    public static Finder<Integer, Oferta> find = new Finder( Integer.class, Oferta.class );
 
 //    private String descripcioTfg;
 //    private CodiPostal codiPostal;
 //    private List<Candidatura> candidaturaList;
 
-    public Oferta( String titol, String informacioOferta, JornadaLaboral jornadaLaboral, Destinatari destinatari, Date dataInsercio, Date dataCaducitat, String nomPersonaContacte, String emailPersonaContacte, List<Coneixement> coneixementList, Empresa empresa ) {
+    public Oferta( String titol,
+                   String informacioOferta,
+                   JornadaLaboral jornadaLaboral,
+                   Destinatari destinatari,
+                   Date dataInsercio,
+                   Date dataCaducitat,
+                   String nomPersonaContacte,
+                   String emailPersonaContacte,
+                   List<Coneixement> coneixementList,
+                   Empresa empresa ) {
         this.titol = titol;
         this.informacioOferta = informacioOferta;
         this.jornadaLaboral = jornadaLaboral;
@@ -181,7 +188,10 @@ public class Oferta extends Model {
         this.empresa = empresa;
     }
 
-    public static List<Oferta> getOfertesList( String tipusOferta, String jornadaLaboral, String destinataris, String cerca ) {
+    public static List<Oferta> getOfertesList( String tipusOferta,
+                                               String jornadaLaboral,
+                                               String destinataris,
+                                               String cerca ) {
         List<String> searchSqlSentences = new ArrayList<String>();
         List<Object> searchSqlValues = new ArrayList<Object>();
 
@@ -197,7 +207,9 @@ public class Oferta extends Model {
         setFilterSql( destinataris, "destinatari", filtersSqlSentences, filtersSqlValues );
 
         // Obtener la query en base a los parámetros de filtrado construidos.
-        Query<Oferta> query = getOfertaQuery( searchSqlSentences, searchSqlValues, filtersSqlSentences, filtersSqlValues );
+        Query<Oferta>
+                query =
+                getOfertaQuery( searchSqlSentences, searchSqlValues, filtersSqlSentences, filtersSqlValues );
 
         // Retornar resultado de query.
         return query.findList();
@@ -218,14 +230,20 @@ public class Oferta extends Model {
         }
     }
 
-    private static void setFilterSql( String filterValue, String filterDbTable, List<String> filtersSqlSentences, List<Object> filtersSqlValues ) {
+    private static void setFilterSql( String filterValue,
+                                      String filterDbTable,
+                                      List<String> filtersSqlSentences,
+                                      List<Object> filtersSqlValues ) {
         if ( !filterValue.equals( "Indiferent" ) ) {
             filtersSqlSentences.add( filterDbTable + " IN( 'Indiferent', ? )" );
             filtersSqlValues.add( filterValue );
         }
     }
 
-    private static Query<Oferta> getOfertaQuery( List<String> searchSqlSentences, List<Object> searchSqlValues, List<String> filtersSqlSentences, List<Object> filtersSqlValues ) {
+    private static Query<Oferta> getOfertaQuery( List<String> searchSqlSentences,
+                                                 List<Object> searchSqlValues,
+                                                 List<String> filtersSqlSentences,
+                                                 List<Object> filtersSqlValues ) {
         // Construct the Ebean query making an OR of the search terms and an AND of the specifiedfilters
         Query<Oferta> query = Ebean.createQuery( Oferta.class );
 

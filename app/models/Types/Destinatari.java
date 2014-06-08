@@ -9,10 +9,10 @@ public enum Destinatari {
     @EnumValue("Estudiants")
     ESTUDIANTS( 2, "Estudiants" ),
 
-    @EnumValue("AcabatsDeTitular")
+    @EnumValue( "AcabatsDeTitular" )
     ACABATS_DE_TITULAR( 3, "Acabats de titular" ),
 
-    @EnumValue("TitulatsAmbExperiencia")
+    @EnumValue( "TitulatsAmbExperiencia" )
     TITULATS_AMB_EXPERIENCIA( 4, "Titulats amb experiència" );
 
     private final Integer id;

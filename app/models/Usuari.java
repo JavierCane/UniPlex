@@ -8,8 +8,8 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
-@Inheritance( strategy = InheritanceType.SINGLE_TABLE )
-@DiscriminatorColumn( name = "tipus", discriminatorType = DiscriminatorType.STRING )
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipus" , discriminatorType = DiscriminatorType.STRING)
 public class Usuari extends Model {
 
     @Id
@@ -27,7 +27,7 @@ public class Usuari extends Model {
 
     @NotNull
     @Constraints.Email
-    @Column( unique = true )
+    @Column(unique = true)
     protected String email;
 
     @NotNull
@@ -39,12 +39,20 @@ public class Usuari extends Model {
     @NotNull
     protected boolean esDeganal;
 
-    @Temporal( TemporalType.DATE )
+    @Temporal(TemporalType.DATE)
     protected Date expiracioBlocatge;
 
     protected String motiuBlocatge;
 
-    public Usuari( String nom, String user, String password, String email, boolean esAdministrador, boolean esBlocat, boolean esDeganal, Date expiracioBlocatge, String motiuBlocatge ) {
+    public Usuari( String nom,
+                   String user,
+                   String password,
+                   String email,
+                   boolean esAdministrador,
+                   boolean esBlocat,
+                   boolean esDeganal,
+                   Date expiracioBlocatge,
+                   String motiuBlocatge ) {
         this.nom = nom;
         this.user = user;
         this.password = password;

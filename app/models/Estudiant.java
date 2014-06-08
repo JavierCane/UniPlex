@@ -1,9 +1,5 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +7,7 @@ import java.util.List;
 //@DiscriminatorValue("Estudiant")
 final public class Estudiant extends Usuari {
 
-//    @NotNull
+    //    @NotNull
 //    @Column(unique = true)
     private String dni;
 
@@ -30,7 +26,30 @@ final public class Estudiant extends Usuari {
     private List<Formacio> formacioList;
     private List<Candidatura> candidaturaList;
 
-    public Estudiant( String nom, String user, String password, String email, boolean esAdministrador, boolean esBlocat, boolean esDeganal, Date expiracioBlocatge, String motiuBlocatge, List<Candidatura> candidaturaList, String dni, String altresDades, String cognom1, String cognom2, Date dataActualitzacio, String fotografia, Integer nss, String telefon, CodiPostal codiPostal, List<Idioma> idiomaList, List<Alerta> alertaList, List<Coneixement> coneixementList, List<ExperienciaLaboral> experienciaLaboralList, List<Formacio> formacioList ) {
+    public Estudiant( String nom,
+                      String user,
+                      String password,
+                      String email,
+                      boolean esAdministrador,
+                      boolean esBlocat,
+                      boolean esDeganal,
+                      Date expiracioBlocatge,
+                      String motiuBlocatge,
+                      List<Candidatura> candidaturaList,
+                      String dni,
+                      String altresDades,
+                      String cognom1,
+                      String cognom2,
+                      Date dataActualitzacio,
+                      String fotografia,
+                      Integer nss,
+                      String telefon,
+                      CodiPostal codiPostal,
+                      List<Idioma> idiomaList,
+                      List<Alerta> alertaList,
+                      List<Coneixement> coneixementList,
+                      List<ExperienciaLaboral> experienciaLaboralList,
+                      List<Formacio> formacioList ) {
         super( nom, user, password, email, esAdministrador, esBlocat, esDeganal, expiracioBlocatge, motiuBlocatge );
         this.candidaturaList = candidaturaList;
         this.dni = dni;

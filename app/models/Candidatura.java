@@ -3,8 +3,6 @@ package models;
 import models.types.EstatCandidatura;
 import play.db.ebean.Model;
 
-import javax.persistence.Entity;
-
 final public class Candidatura extends Model {
 
     /**

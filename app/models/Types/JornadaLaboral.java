@@ -3,13 +3,13 @@ package models.types;
 import com.avaje.ebean.annotation.EnumValue;
 
 public enum JornadaLaboral {
-    @EnumValue( "Indiferent" )
+    @EnumValue("Indiferent")
     INDIFERENT( 1, "Indiferent" ),
 
-    @EnumValue( "Completa" )
+    @EnumValue("Completa")
     COMPLETA( 2, "Completa" ),
 
-    @EnumValue( "Mitja" )
+    @EnumValue("Mitja")
     MITJA( 3, "Mitja" );
 
     private final Integer id;

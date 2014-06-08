@@ -5,7 +5,6 @@ import models.types.JornadaLaboral;
 import models.types.Periodicitat;
 import play.db.ebean.Model;
 
-import javax.persistence.Entity;
 import java.util.List;
 
 final public class Alerta extends Model {
