@@ -3,7 +3,7 @@ package models.types;
 import com.avaje.ebean.annotation.EnumValue;
 
 public enum Destinatari {
-    @EnumValue( "Indiferent" )
+    @EnumValue("Indiferent")
     INDIFERENT( 1, "Indiferent" ),
 
     @EnumValue("Estudiants")

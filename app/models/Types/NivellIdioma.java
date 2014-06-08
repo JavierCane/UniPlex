@@ -2,8 +2,9 @@ package models.types;
 
 /**
  * Nivel que se exige de un idioma determinado.
- *
- * See <a href="https://www.upc.edu/slt/apren-angles/nivells-i-certificats-de-llengues">https://www.upc.edu/slt/apren-angles/nivells-i-certificats-de-llengues</a>
+ * <p/>
+ * See <a href="https://www.upc.edu/slt/apren-angles/nivells-i-certificats-de-llengues">https://www.upc
+ * .edu/slt/apren-angles/nivells-i-certificats-de-llengues</a>
  */
 public enum NivellIdioma {
     A1,

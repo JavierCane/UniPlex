@@ -28,8 +28,9 @@ public class Global extends GlobalSettings {
         public static void insert( Application app ) {
             if ( Ebean.find( Empresa.class ).findRowCount() == 0 ) {
 
-                @SuppressWarnings( "unchecked" )
-                Map<String, List<Object>> all = ( Map<String, List<Object>> ) Yaml.load( "initial-data.yml" );
+                @SuppressWarnings("unchecked") Map<String, List<Object>>
+                        all =
+                        ( Map<String, List<Object>> ) Yaml.load( "initial-data.yml" );
 
                 Ebean.save( all.get( "Coneixement" ) );
                 Ebean.save( all.get( "Empresa" ) );

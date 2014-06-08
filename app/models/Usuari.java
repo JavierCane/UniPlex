@@ -44,7 +44,15 @@ public class Usuari extends Model {
 
     protected String motiuBlocatge;
 
-    public Usuari( String nom, String user, String password, String email, boolean esAdministrador, boolean esBlocat, boolean esDeganal, Date expiracioBlocatge, String motiuBlocatge ) {
+    public Usuari( String nom,
+                   String user,
+                   String password,
+                   String email,
+                   boolean esAdministrador,
+                   boolean esBlocat,
+                   boolean esDeganal,
+                   Date expiracioBlocatge,
+                   String motiuBlocatge ) {
         this.nom = nom;
         this.user = user;
         this.password = password;
