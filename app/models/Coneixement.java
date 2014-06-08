@@ -21,7 +21,7 @@ final public class Coneixement extends Model {
      */
     @NotNull
     @Constraints.Required
-    @Column(unique = true)
+    @Column( unique = true )
     private String nom;
 
     public Coneixement( Integer id, String nom ) {

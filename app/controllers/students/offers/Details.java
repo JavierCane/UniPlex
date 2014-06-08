@@ -13,16 +13,14 @@ public class Details extends Controller {
     public static Result viewOfferDetails( String companyUrlize, String offerUrlize, Integer offerId ) {
         Oferta oferta = Oferta.find.byId( offerId );
 
-        if ( oferta == null ) {
+        if ( oferta == null )
             return notFound( "Oferta " + offerId + " no encontrada." );
-        }
 
         String realCompanyUrlize = normalize( oferta.getEmpresa().getNom() );
         String realOfferUrlize = normalize( oferta.getTitol() );
 
-        if ( !companyUrlize.equals( realCompanyUrlize ) || !offerUrlize.equals( realOfferUrlize ) ) {
+        if ( !companyUrlize.equals( realCompanyUrlize ) || !offerUrlize.equals( realOfferUrlize ) )
             return movedPermanently( routes.Details.viewOfferDetails( realCompanyUrlize, realOfferUrlize, offerId ) );
-        }
 
         return ok( details.render( offerUrlize + " a " + companyUrlize, oferta ) );
     }
